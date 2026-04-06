@@ -54,6 +54,70 @@
   }
 }
 
+@media (max-width: 900px), (hover: none) and (pointer: coarse) {
+  .app-atmosphere {
+    position: absolute;
+  }
+
+  .app-atmosphere__beam,
+  .app-atmosphere__grid {
+    display: none;
+  }
+
+  .app-atmosphere__orb,
+  .app-shell::before,
+  .app-shell::after,
+  .panel,
+  .hero-panel,
+  .project-modal__surface {
+    animation: none;
+  }
+
+  .app-atmosphere__orb,
+  .app-shell::before,
+  .app-shell::after {
+    filter: blur(16px);
+    opacity: 0.32;
+  }
+
+  .app-shell::before,
+  .app-shell::after {
+    position: absolute;
+  }
+
+  .panel,
+  .hero-panel,
+  .action-button,
+  .project-card__open,
+  .project-card__actions a,
+  .project-modal,
+  .project-modal__close {
+    backdrop-filter: none;
+  }
+
+  .glow-surface,
+  .glow-button,
+  .project-card__cover,
+  .soft-skill,
+  .soft-skill__indicator {
+    transition: none;
+  }
+
+  .glow-surface:hover,
+  .glow-surface:focus-within,
+  .glow-button:hover,
+  .glow-button:focus-visible {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .project-card:hover .project-card__cover,
+  .project-card:focus-within .project-card__cover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .app-atmosphere__orb,
   .app-atmosphere__beam,

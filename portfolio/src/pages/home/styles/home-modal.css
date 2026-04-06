@@ -12,6 +12,7 @@
 .project-modal__surface {
   width: min(920px, 100%);
   max-height: calc(100vh - 48px);
+  max-height: calc(100dvh - 48px);
   overflow: auto;
   padding: 22px;
   border-radius: 28px;

@@ -39,6 +39,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  min-height: 100dvh;
   overflow-x: hidden;
   background:
     radial-gradient(circle at 14% 18%, rgba(125, 255, 177, 0.18) 0, transparent 28%),
@@ -51,6 +52,7 @@ body {
 
 #root {
   min-height: 100vh;
+  min-height: 100dvh;
 }
 
 body,
@@ -111,6 +113,12 @@ a {
     scroll-behavior: auto;
   }
 
+  body {
+    animation: none;
+  }
+}
+
+@media (max-width: 900px), (hover: none) and (pointer: coarse) {
   body {
     animation: none;
   }
