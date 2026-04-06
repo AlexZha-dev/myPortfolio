@@ -1,7 +1,7 @@
 ﻿import type { UiDictionary } from './types'
 
 export const ru: UiDictionary = {
-  siteTitle: 'MyPortfolio',
+  siteTitle: 'myPortfolio',
   siteSubtitle: 'Python backend-системы: API, данные, интеграции и архитектура, рассчитанная на развитие',
   localeSwitcherLabel: 'Переключатель языка',
   actions: {

@@ -1,7 +1,7 @@
 ﻿import type { UiDictionary } from './types'
 
 export const fi: UiDictionary = {
-  siteTitle: 'MyPortfolio',
+  siteTitle: 'myPortfolio',
   siteSubtitle: 'Python-backendeja: API-rajapintoja, dataa, integraatioita ja kasvua kestavaa arkkitehtuuria',
   localeSwitcherLabel: 'Kielen valitsin',
   actions: {

@@ -1,7 +1,7 @@
 ﻿import type { UiDictionary } from './types'
 
 export const en: UiDictionary = {
-  siteTitle: 'MyPortfolio',
+  siteTitle: 'myPortfolio',
   siteSubtitle: 'Python backend systems: APIs, data, integrations, and architecture built to evolve',
   localeSwitcherLabel: 'Language switcher',
   actions: {

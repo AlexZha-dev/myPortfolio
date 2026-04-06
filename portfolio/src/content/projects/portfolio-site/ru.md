@@ -1,5 +1,5 @@
 ---
-title: "MyPortfolio"
+title: "myPortfolio"
 projectId: "portfolio-site"
 locale: "ru"
 summary: "Личный сайт-портфолио на React и TypeScript с markdown-driven контентом, мультиязычной архитектурой, hash-модалками проектов и кастомным Vite loader для секций и кейсов."
@@ -15,7 +15,7 @@ status: "published"
 translationState: "ready"
 repoUrl: "https://github.com/AlexZha-dev/myPortfolio"
 cover: "./cover.svg"
-coverAlt: "Architecture overview of the MyPortfolio site"
+coverAlt: "Architecture overview of the myPortfolio site"
 tags:
   - portfolio
   - frontend
@@ -25,7 +25,7 @@ year: 2026
 seoDescription: "Контентный мультиязычный сайт-портфолио с markdown-архитектурой, кастомным Vite loader и page-based UI."
 ---
 
-`MyPortfolio` — это сам сайт-портфолио, оформленный как отдельный проект в этом же репозитории. Он нужен не только как витрина моих кейсов, но и как самостоятельная техническая работа с контентной архитектурой, локализацией, сборкой markdown-контента и аккуратной UI-структурой.
+`myPortfolio` — это сам сайт-портфолио, оформленный как отдельный проект в этом же репозитории. Он нужен не только как витрина моих кейсов, но и как самостоятельная техническая работа с контентной архитектурой, локализацией, сборкой markdown-контента и аккуратной UI-структурой.
 
 Сайт построен на `React 19`, `TypeScript` и `Vite`, а основная идея архитектуры в том, что тексты и кейсы живут отдельно от интерфейса. Разделы страницы и карточки проектов загружаются из `src/content/pages` и `src/content/projects`, проходят через кастомный markdown-loader в `vite.config.ts`, валидируются через `zod` и только после этого попадают в UI.
 

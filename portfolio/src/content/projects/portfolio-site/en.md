@@ -1,5 +1,5 @@
 ---
-title: "MyPortfolio"
+title: "myPortfolio"
 projectId: "portfolio-site"
 locale: "en"
 summary: "A personal portfolio website built with React and TypeScript, featuring markdown-driven content, multilingual architecture, hash-based project modals, and a custom Vite loader for sections and case studies."
@@ -15,7 +15,7 @@ status: "published"
 translationState: "ready"
 repoUrl: "https://github.com/AlexZha-dev/myPortfolio"
 cover: "./cover.svg"
-coverAlt: "Architecture overview of the MyPortfolio site"
+coverAlt: "Architecture overview of the myPortfolio site"
 tags:
   - portfolio
   - frontend
@@ -25,7 +25,7 @@ year: 2026
 seoDescription: "A multilingual content-driven portfolio site with markdown architecture, a custom Vite loader, and page-based UI composition."
 ---
 
-`MyPortfolio` is the portfolio website itself, treated as a project inside the same repository. It exists not only as a showcase for my other work, but also as a standalone technical case around content architecture, localization, markdown loading, and a clean UI structure.
+`myPortfolio` is the portfolio website itself, treated as a project inside the same repository. It exists not only as a showcase for my other work, but also as a standalone technical case around content architecture, localization, markdown loading, and a clean UI structure.
 
 The site is built with `React 19`, `TypeScript`, and `Vite`. The main architectural idea is that content lives separately from presentation. Page sections and project cards are loaded from `src/content/pages` and `src/content/projects`, pass through a custom markdown loader in `vite.config.ts`, are validated with `zod`, and only then are rendered into the UI.
 

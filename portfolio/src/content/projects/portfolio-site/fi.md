@@ -1,5 +1,5 @@
 ---
-title: "MyPortfolio"
+title: "myPortfolio"
 projectId: "portfolio-site"
 locale: "fi"
 summary: "Henkilokohtainen portfoliosivusto Reactilla ja TypeScriptilla, jossa on markdown-pohjainen sisalto, monikielinen arkkitehtuuri, hash-pohjaiset project-modalit ja oma Vite-loader osioille ja caseille."
@@ -15,7 +15,7 @@ status: "published"
 translationState: "ready"
 repoUrl: "https://github.com/AlexZha-dev/myPortfolio"
 cover: "./cover.svg"
-coverAlt: "Architecture overview of the MyPortfolio site"
+coverAlt: "Architecture overview of the myPortfolio site"
 tags:
   - portfolio
   - frontend
@@ -25,7 +25,7 @@ year: 2026
 seoDescription: "Monikielinen sisaltovetoinen portfoliosivusto markdown-arkkitehtuurilla, omalla Vite-loaderilla ja page-pohjaisella UI-rakenteella."
 ---
 
-`MyPortfolio` on portfoliosivusto itse, kasiteltyna omana projektinaan samassa repossa. Se ei ole vain vitriini muille tyoilleni, vaan myos itsenainen tekninen case sisaltoarkkitehtuurista, lokalisoinnista, markdown-latauksesta ja siistista UI-rakenteesta.
+`myPortfolio` on portfoliosivusto itse, kasiteltyna omana projektinaan samassa repossa. Se ei ole vain vitriini muille tyoilleni, vaan myos itsenainen tekninen case sisaltoarkkitehtuurista, lokalisoinnista, markdown-latauksesta ja siistista UI-rakenteesta.
 
 Sivusto on rakennettu `React 19`:lla, `TypeScriptilla` ja `Vitella`. Arkkitehtuurin paaidea on se, etta sisalto elaa erillaan esityskerrokesta. Sivun osiot ja projektikortit ladataan kansioista `src/content/pages` ja `src/content/projects`, kulkevat oman markdown-loaderin lapi tiedostossa `vite.config.ts`, validoidaan `zodilla` ja renderoidaan vasta sen jalkeen UI:hin.
 
