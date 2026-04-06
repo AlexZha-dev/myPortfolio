@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="title desc">
+  <title id="title">Northern Lights Blog cover</title>
+  <desc id="desc">Placeholder cover image for the Northern Lights Blog project.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#09120f" />
+      <stop offset="100%" stop-color="#173224" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="520" rx="36" fill="url(#bg)" />
+  <circle cx="640" cy="124" r="104" fill="#7dffb1" fill-opacity="0.1" />
+  <rect x="56" y="70" width="688" height="380" rx="30" fill="#08110d" stroke="#7dffb1" stroke-opacity="0.22" />
+  <text x="94" y="146" fill="#7dffb1" font-family="Segoe UI, sans-serif" font-size="24">Northern Lights Blog</text>
+  <text x="94" y="206" fill="#d8f5e3" font-family="Segoe UI, sans-serif" font-size="42">Editorial Experience Case</text>
+  <text x="94" y="254" fill="#a6d7bb" font-family="Segoe UI, sans-serif" font-size="22">
+    Long reads, article cards, atmospheric interface
+  </text>
+  <rect x="94" y="314" width="238" height="14" rx="7" fill="#214835" />
+  <rect x="94" y="344" width="308" height="14" rx="7" fill="#173a2a" />
+  <rect x="94" y="374" width="192" height="14" rx="7" fill="#122d21" />
+</svg>
