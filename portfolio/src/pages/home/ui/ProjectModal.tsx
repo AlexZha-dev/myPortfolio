@@ -13,6 +13,8 @@ export function ProjectModal({
   project,
   onClose,
 }: ProjectModalProps) {
+  const hasProjectLinks = Boolean(project.translation.repoUrl || project.translation.demoUrl)
+
   return (
     <div className="project-modal" role="presentation" onClick={onClose}>
       <div
@@ -58,28 +60,30 @@ export function ProjectModal({
           ) : null}
         </div>
 
-        <div className="project-card__actions">
-          {project.translation.repoUrl ? (
-            <a
-              className="glow-button"
-              href={project.translation.repoUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub
-            </a>
-          ) : null}
-          {project.translation.demoUrl ? (
-            <a
-              className="glow-button"
-              href={project.translation.demoUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Live Demo
-            </a>
-          ) : null}
-        </div>
+        {hasProjectLinks ? (
+          <div className="project-card__actions">
+            {project.translation.repoUrl ? (
+              <a
+                className="glow-button"
+                href={project.translation.repoUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub
+              </a>
+            ) : null}
+            {project.translation.demoUrl ? (
+              <a
+                className="glow-button"
+                href={project.translation.demoUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Live Demo
+              </a>
+            ) : null}
+          </div>
+        ) : null}
 
         <MarkdownContent>{project.translation.body}</MarkdownContent>
 

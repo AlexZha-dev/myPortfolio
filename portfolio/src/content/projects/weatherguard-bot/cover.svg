@@ -1,0 +1,83 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="184" y1="70" x2="1420" y2="834" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#102119"/>
+      <stop offset="1" stop-color="#08100C"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(288 186) rotate(26.4) scale(452 252)">
+      <stop stop-color="#8DFFC0" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#8DFFC0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1292 214) rotate(152.2) scale(434 270)">
+      <stop stop-color="#49D48A" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#49D48A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#173126" stop-opacity="0.94"/>
+      <stop offset="1" stop-color="#0A140F" stop-opacity="0.98"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" rx="32" fill="url(#bg)"/>
+  <rect width="1600" height="900" rx="32" fill="url(#glowA)"/>
+  <rect width="1600" height="900" rx="32" fill="url(#glowB)"/>
+
+  <g opacity="0.12">
+    <path d="M0 180H1600" stroke="#7DFFB1"/>
+    <path d="M0 360H1600" stroke="#7DFFB1"/>
+    <path d="M0 540H1600" stroke="#7DFFB1"/>
+    <path d="M0 720H1600" stroke="#7DFFB1"/>
+    <path d="M200 0V900" stroke="#7DFFB1"/>
+    <path d="M400 0V900" stroke="#7DFFB1"/>
+    <path d="M600 0V900" stroke="#7DFFB1"/>
+    <path d="M800 0V900" stroke="#7DFFB1"/>
+    <path d="M1000 0V900" stroke="#7DFFB1"/>
+    <path d="M1200 0V900" stroke="#7DFFB1"/>
+    <path d="M1400 0V900" stroke="#7DFFB1"/>
+  </g>
+
+  <rect x="96" y="92" width="1408" height="716" rx="36" fill="url(#panel)" stroke="#2B5843"/>
+
+  <text x="136" y="156" fill="#E6FFF0" font-family="monospace" font-size="38">WeatherGuard Bot</text>
+  <text x="136" y="198" fill="#7EA08D" font-family="monospace" font-size="24">Telegram weather assistant with smart daily alerts</text>
+
+  <rect x="136" y="248" width="364" height="262" rx="28" fill="#101F18" stroke="#2E5A46"/>
+  <text x="170" y="304" fill="#7DFFB1" font-family="monospace" font-size="24">FORECASTS</text>
+  <text x="170" y="356" fill="#E6FFF0" font-family="monospace" font-size="20">location-based weather</text>
+  <text x="170" y="392" fill="#E6FFF0" font-family="monospace" font-size="20">daily forecast</text>
+  <text x="170" y="428" fill="#B9D6C5" font-family="monospace" font-size="20">human-readable summaries</text>
+  <text x="170" y="464" fill="#B9D6C5" font-family="monospace" font-size="20">short Telegram delivery</text>
+
+  <rect x="618" y="248" width="364" height="262" rx="28" fill="#101F18" stroke="#2E5A46"/>
+  <text x="652" y="304" fill="#7DFFB1" font-family="monospace" font-size="24">SMART ALERTS</text>
+  <text x="652" y="356" fill="#E6FFF0" font-family="monospace" font-size="20">umbrella reminder</text>
+  <text x="652" y="392" fill="#E6FFF0" font-family="monospace" font-size="20">snow / frost / heat alerts</text>
+  <text x="652" y="428" fill="#B9D6C5" font-family="monospace" font-size="20">wind and sudden changes</text>
+  <text x="652" y="464" fill="#B9D6C5" font-family="monospace" font-size="20">notify only when needed</text>
+
+  <rect x="1100" y="248" width="364" height="262" rx="28" fill="#101F18" stroke="#2E5A46"/>
+  <text x="1134" y="304" fill="#7DFFB1" font-family="monospace" font-size="24">BOT UX</text>
+  <text x="1134" y="356" fill="#E6FFF0" font-family="monospace" font-size="20">Telegram-first flow</text>
+  <text x="1134" y="392" fill="#E6FFF0" font-family="monospace" font-size="20">share location</text>
+  <text x="1134" y="428" fill="#B9D6C5" font-family="monospace" font-size="20">alert preferences</text>
+  <text x="1134" y="464" fill="#B9D6C5" font-family="monospace" font-size="20">clear daily planning hints</text>
+
+  <path d="M500 380H618" stroke="#7DFFB1" stroke-width="4" stroke-linecap="round"/>
+  <path d="M982 380H1100" stroke="#7DFFB1" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="559" cy="380" r="8" fill="#7DFFB1"/>
+  <circle cx="1041" cy="380" r="8" fill="#7DFFB1"/>
+
+  <rect x="136" y="560" width="1328" height="164" rx="28" fill="#0D1A14" stroke="#274C3A"/>
+  <text x="170" y="614" fill="#7DFFB1" font-family="monospace" font-size="24">STACK</text>
+  <text x="170" y="662" fill="#E6FFF0" font-family="monospace" font-size="20">Python  |  Aiogram  |  Weather API  |  Telegram Bot API  |  alert logic</text>
+  <text x="170" y="700" fill="#7EA08D" font-family="monospace" font-size="20">smart reminders  |  user settings  |  location-aware notifications</text>
+
+  <g transform="translate(1312 590)">
+    <circle cx="58" cy="58" r="52" fill="#13271E" stroke="#7DFFB1" stroke-width="3"/>
+    <path d="M40 64C40 46 54 32 72 32C88 32 102 44 104 60C114 62 122 70 122 82C122 95 112 106 98 106H48C32 106 20 95 20 80C20 68 28 58 40 55V64Z" fill="#7DFFB1" fill-opacity="0.2" stroke="#7DFFB1" stroke-width="3"/>
+    <path d="M52 110L44 126" stroke="#7DFFB1" stroke-width="3" stroke-linecap="round"/>
+    <path d="M78 110L70 126" stroke="#7DFFB1" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <text x="96" y="816" fill="#7EA08D" font-family="monospace" font-size="20">Telegram bot  |  weather alerts and planning hints  |  2025</text>
+</svg>

@@ -24,9 +24,9 @@ export const en: UiDictionary = {
     eyebrow: 'Backend Python Engineer',
     availableNowTitle: 'Working languages',
     availableNowText: 'The portfolio is available in Russian, English, and Finnish.',
-    selectedWorkTitle: 'Selected work',
+    selectedWorkTitle: 'Real projects',
     selectedWorkText:
-      'case studies reflect how I approach service architecture, data work, and backend system growth.',
+      'including production and study cases: Telegram bots, a realtime voice pipeline, a Raspberry Pi audio client, desktop tooling for model benchmarking, an evolving productivity system, and the portfolio platform itself.',
     nextLocaleTitle: 'Current focus',
     nextLocaleText:
       'Strengthening production practices, service architecture, and long-term maintainability.',
@@ -37,7 +37,7 @@ export const en: UiDictionary = {
     stackLead:
       'The technologies I use for APIs, data layers, integrations, automation, and delivery infrastructure.',
     projectsLead:
-      'A few cases that show my engineering approach to backend services and system evolution.',
+      'Production and study backend/tooling cases, plus the portfolio platform itself: Telegram bots, a realtime audio/LLM pipeline, a Raspberry Pi edge client, model benchmarking, infrastructure automation, and the site’s content architecture.',
     processLead:
       'How I move through backend work: from domain and architecture to stable production delivery.',
     growthLead:

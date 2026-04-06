@@ -19,6 +19,22 @@ export interface LocalizedProject {
 
 type ProjectTranslationMap = Map<LocaleCode, ProjectTranslation>
 
+function getProjectSortTimestamp(translation: ProjectTranslation) {
+  if (translation.publishedAt) {
+    const publishedAtTimestamp = Date.parse(translation.publishedAt)
+
+    if (!Number.isNaN(publishedAtTimestamp)) {
+      return publishedAtTimestamp
+    }
+  }
+
+  if (translation.year) {
+    return Date.UTC(translation.year, 0, 1)
+  }
+
+  return Number.NEGATIVE_INFINITY
+}
+
 function collectProjectTranslations() {
   const projectsById = new Map<string, ProjectTranslationMap>()
 
@@ -91,16 +107,19 @@ function buildLocalizedProjects() {
   }
 
   return localizedProjects.sort((left, right) => {
+    const leftTimestamp = getProjectSortTimestamp(left.translation)
+    const rightTimestamp = getProjectSortTimestamp(right.translation)
+
+    if (leftTimestamp !== rightTimestamp) {
+      return rightTimestamp - leftTimestamp
+    }
+
     if (left.translation.featured !== right.translation.featured) {
       return left.translation.featured ? -1 : 1
     }
 
     if (left.translation.sortOrder !== right.translation.sortOrder) {
       return left.translation.sortOrder - right.translation.sortOrder
-    }
-
-    if (left.translation.publishedAt && right.translation.publishedAt) {
-      return left.translation.publishedAt < right.translation.publishedAt ? 1 : -1
     }
 
     return left.translation.title.localeCompare(right.translation.title)

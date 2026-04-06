@@ -1,0 +1,79 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="188" y1="70" x2="1420" y2="828" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#102119"/>
+      <stop offset="1" stop-color="#08100C"/>
+    </linearGradient>
+    <radialGradient id="glowLeft" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(292 184) rotate(25.4) scale(440 248)">
+      <stop stop-color="#8DFFC0" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#8DFFC0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowRight" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1294 214) rotate(152.6) scale(432 270)">
+      <stop stop-color="#49D48A" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#49D48A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#173126" stop-opacity="0.94"/>
+      <stop offset="1" stop-color="#0A140F" stop-opacity="0.98"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" rx="32" fill="url(#bg)"/>
+  <rect width="1600" height="900" rx="32" fill="url(#glowLeft)"/>
+  <rect width="1600" height="900" rx="32" fill="url(#glowRight)"/>
+
+  <g opacity="0.12">
+    <path d="M0 180H1600" stroke="#7DFFB1"/>
+    <path d="M0 360H1600" stroke="#7DFFB1"/>
+    <path d="M0 540H1600" stroke="#7DFFB1"/>
+    <path d="M0 720H1600" stroke="#7DFFB1"/>
+    <path d="M200 0V900" stroke="#7DFFB1"/>
+    <path d="M400 0V900" stroke="#7DFFB1"/>
+    <path d="M600 0V900" stroke="#7DFFB1"/>
+    <path d="M800 0V900" stroke="#7DFFB1"/>
+    <path d="M1000 0V900" stroke="#7DFFB1"/>
+    <path d="M1200 0V900" stroke="#7DFFB1"/>
+    <path d="M1400 0V900" stroke="#7DFFB1"/>
+  </g>
+
+  <rect x="96" y="92" width="1408" height="716" rx="36" fill="url(#panel)" stroke="#2B5843"/>
+
+  <text x="136" y="160" fill="#E6FFF0" font-family="monospace" font-size="38">Test Ollama Models</text>
+  <text x="136" y="202" fill="#7EA08D" font-family="monospace" font-size="24">Desktop benchmarking for local and remote Ollama-compatible models</text>
+
+  <rect x="136" y="252" width="426" height="250" rx="28" fill="#101F18" stroke="#2E5A46"/>
+  <text x="170" y="308" fill="#7DFFB1" font-family="monospace" font-size="24">RUN TESTS</text>
+  <text x="170" y="360" fill="#E6FFF0" font-family="monospace" font-size="22">model_a  model_b  model_c</text>
+  <text x="170" y="396" fill="#B9D6C5" font-family="monospace" font-size="20">same prompt set</text>
+  <text x="170" y="432" fill="#B9D6C5" font-family="monospace" font-size="20">configurable concurrency</text>
+  <text x="170" y="468" fill="#B9D6C5" font-family="monospace" font-size="20">instance consoles + progress</text>
+
+  <rect x="588" y="252" width="426" height="250" rx="28" fill="#101F18" stroke="#2E5A46"/>
+  <text x="622" y="308" fill="#7DFFB1" font-family="monospace" font-size="24">ANSWERS + METRICS</text>
+  <text x="622" y="360" fill="#E6FFF0" font-family="monospace" font-size="22">latency  tokens  tps</text>
+  <polyline points="632,460 692,430 752,446 812,392 872,404 932,350 982,368" fill="none" stroke="#7DFFB1" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="692" cy="430" r="6" fill="#7DFFB1"/>
+  <circle cx="812" cy="392" r="6" fill="#7DFFB1"/>
+  <circle cx="932" cy="350" r="6" fill="#7DFFB1"/>
+
+  <rect x="1040" y="252" width="424" height="250" rx="28" fill="#101F18" stroke="#2E5A46"/>
+  <text x="1074" y="308" fill="#7DFFB1" font-family="monospace" font-size="24">SETTINGS</text>
+  <text x="1074" y="360" fill="#E6FFF0" font-family="monospace" font-size="20">host: 192.168.194.21</text>
+  <text x="1074" y="396" fill="#E6FFF0" font-family="monospace" font-size="20">port: 11434</text>
+  <text x="1074" y="432" fill="#E6FFF0" font-family="monospace" font-size="20">path: /api/generate</text>
+  <text x="1074" y="468" fill="#B9D6C5" font-family="monospace" font-size="20">SQLite config + results DB</text>
+
+  <rect x="136" y="560" width="1328" height="164" rx="28" fill="#0D1A14" stroke="#274C3A"/>
+  <text x="170" y="614" fill="#7DFFB1" font-family="monospace" font-size="24">ARCHITECTURE</text>
+  <text x="170" y="662" fill="#E6FFF0" font-family="monospace" font-size="20">UI  |  Presenters  |  Application  |  Domain  |  Gateways  |  Infrastructure</text>
+  <text x="170" y="700" fill="#7EA08D" font-family="monospace" font-size="20">Python 3.11  |  Flet  |  requests  |  SQLite  |  dependency-injector  |  pytest + mypy + bandit</text>
+
+  <g transform="translate(1310 598)">
+    <rect x="0" y="0" width="120" height="92" rx="18" fill="#11241B" stroke="#7DFFB1" stroke-width="3"/>
+    <rect x="18" y="18" width="84" height="12" rx="6" fill="#7DFFB1" fill-opacity="0.24"/>
+    <rect x="18" y="40" width="60" height="10" rx="5" fill="#7DFFB1" fill-opacity="0.44"/>
+    <rect x="18" y="58" width="74" height="10" rx="5" fill="#7DFFB1" fill-opacity="0.34"/>
+  </g>
+
+  <text x="96" y="816" fill="#7EA08D" font-family="monospace" font-size="20">Desktop benchmarking  |  Ollama-compatible APIs  |  2025</text>
+</svg>

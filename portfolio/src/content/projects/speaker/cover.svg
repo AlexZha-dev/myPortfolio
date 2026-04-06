@@ -1,0 +1,83 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="182" y1="68" x2="1422" y2="834" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#102119"/>
+      <stop offset="1" stop-color="#08100C"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(292 186) rotate(26.2) scale(448 254)">
+      <stop stop-color="#8DFFC0" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#8DFFC0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1294 216) rotate(151.8) scale(434 270)">
+      <stop stop-color="#49D48A" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#49D48A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#173126" stop-opacity="0.94"/>
+      <stop offset="1" stop-color="#0A140F" stop-opacity="0.98"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" rx="32" fill="url(#bg)"/>
+  <rect width="1600" height="900" rx="32" fill="url(#glowA)"/>
+  <rect width="1600" height="900" rx="32" fill="url(#glowB)"/>
+
+  <g opacity="0.12">
+    <path d="M0 180H1600" stroke="#7DFFB1"/>
+    <path d="M0 360H1600" stroke="#7DFFB1"/>
+    <path d="M0 540H1600" stroke="#7DFFB1"/>
+    <path d="M0 720H1600" stroke="#7DFFB1"/>
+    <path d="M200 0V900" stroke="#7DFFB1"/>
+    <path d="M400 0V900" stroke="#7DFFB1"/>
+    <path d="M600 0V900" stroke="#7DFFB1"/>
+    <path d="M800 0V900" stroke="#7DFFB1"/>
+    <path d="M1000 0V900" stroke="#7DFFB1"/>
+    <path d="M1200 0V900" stroke="#7DFFB1"/>
+    <path d="M1400 0V900" stroke="#7DFFB1"/>
+  </g>
+
+  <rect x="96" y="92" width="1408" height="716" rx="36" fill="url(#panel)" stroke="#2B5843"/>
+
+  <text x="136" y="156" fill="#E6FFF0" font-family="monospace" font-size="38">Speaker</text>
+  <text x="136" y="198" fill="#7EA08D" font-family="monospace" font-size="24">Realtime audio agent: FastAPI + Vosk + Ollama + Coqui TTS</text>
+
+  <rect x="136" y="248" width="364" height="260" rx="28" fill="#101F18" stroke="#2E5A46"/>
+  <text x="170" y="304" fill="#7DFFB1" font-family="monospace" font-size="24">INPUT</text>
+  <text x="170" y="356" fill="#E6FFF0" font-family="monospace" font-size="20">ws://host/ws/audio</text>
+  <text x="170" y="392" fill="#B9D6C5" font-family="monospace" font-size="20">binary PCM chunks</text>
+  <text x="170" y="428" fill="#B9D6C5" font-family="monospace" font-size="20">heartbeat + queue status</text>
+  <text x="170" y="464" fill="#B9D6C5" font-family="monospace" font-size="20">session-scoped logging</text>
+
+  <rect x="618" y="248" width="364" height="260" rx="28" fill="#101F18" stroke="#2E5A46"/>
+  <text x="652" y="304" fill="#7DFFB1" font-family="monospace" font-size="24">PIPELINE</text>
+  <text x="652" y="356" fill="#E6FFF0" font-family="monospace" font-size="20">Vosk -&gt; transcript</text>
+  <text x="652" y="392" fill="#E6FFF0" font-family="monospace" font-size="20">Ollama -&gt; streaming LLM</text>
+  <text x="652" y="428" fill="#E6FFF0" font-family="monospace" font-size="20">Coqui TTS -&gt; audio reply</text>
+  <text x="652" y="464" fill="#B9D6C5" font-family="monospace" font-size="20">ordered playback queue</text>
+
+  <rect x="1100" y="248" width="364" height="260" rx="28" fill="#101F18" stroke="#2E5A46"/>
+  <text x="1134" y="304" fill="#7DFFB1" font-family="monospace" font-size="24">OUTPUT</text>
+  <text x="1134" y="356" fill="#E6FFF0" font-family="monospace" font-size="20">response.start</text>
+  <text x="1134" y="392" fill="#E6FFF0" font-family="monospace" font-size="20">playback_file_start</text>
+  <text x="1134" y="428" fill="#E6FFF0" font-family="monospace" font-size="20">binary PCM / WAV chunks</text>
+  <text x="1134" y="464" fill="#B9D6C5" font-family="monospace" font-size="20">response.end</text>
+
+  <path d="M500 378H618" stroke="#7DFFB1" stroke-width="4" stroke-linecap="round"/>
+  <path d="M982 378H1100" stroke="#7DFFB1" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="559" cy="378" r="8" fill="#7DFFB1"/>
+  <circle cx="1041" cy="378" r="8" fill="#7DFFB1"/>
+
+  <rect x="136" y="562" width="1328" height="164" rx="28" fill="#0D1A14" stroke="#274C3A"/>
+  <text x="170" y="616" fill="#7DFFB1" font-family="monospace" font-size="24">STACK</text>
+  <text x="170" y="664" fill="#E6FFF0" font-family="monospace" font-size="20">Python 3.10+  |  FastAPI  |  WebSocket  |  Vosk  |  Ollama  |  Coqui TTS</text>
+  <text x="170" y="702" fill="#7EA08D" font-family="monospace" font-size="20">Realtime audio pipeline  |  async worker pool  |  per-session runtime state</text>
+
+  <g transform="translate(1310 592)">
+    <circle cx="60" cy="60" r="52" fill="#13271E" stroke="#7DFFB1" stroke-width="3"/>
+    <path d="M60 22C76 22 88 35 88 52V66C88 83 76 96 60 96C44 96 32 83 32 66V52C32 35 44 22 60 22Z" fill="#7DFFB1" fill-opacity="0.24" stroke="#7DFFB1" stroke-width="3"/>
+    <path d="M44 108H76" stroke="#7DFFB1" stroke-width="3" stroke-linecap="round"/>
+    <path d="M60 96V124" stroke="#7DFFB1" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <text x="96" y="816" fill="#7EA08D" font-family="monospace" font-size="20">Voice pipeline  |  ASR to LLM to TTS  |  2025</text>
+</svg>

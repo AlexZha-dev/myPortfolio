@@ -24,9 +24,9 @@ export const fi: UiDictionary = {
     eyebrow: 'Backend Python Engineer',
     availableNowTitle: 'Tyokielet',
     availableNowText: 'Portfolio on saatavilla venajaksi, englanniksi ja suomeksi.',
-    selectedWorkTitle: 'Valitut caset',
+    selectedWorkTitle: 'Oikeat projektit',
     selectedWorkText:
-      'caset nayttavat tapani rakentaa palveluarkkitehtuuria, datakerrosta ja kehitettavia backend-jarjestelmia.',
+      'mukana on production- ja opiskelucaseja: Telegram-botteja, realtime voice pipeline, Raspberry Pi -audioclient, desktop-tyokaluja mallien benchmarkingiin, kehittyva productivity-jarjestelma seka itse portfolioalusta.',
     nextLocaleTitle: 'Nykyinen fokus',
     nextLocaleText:
       'Vahvistan production-kaytantoja, palveluarkkitehtuuria ja jarjestelmien yllapidettavyytta.',
@@ -37,7 +37,7 @@ export const fi: UiDictionary = {
     stackLead:
       'Teknologiat, joita kaytan API-rajapinnoissa, datakerroksessa, integraatioissa, automaatiossa ja toimituksessa.',
     projectsLead:
-      'Muutama case, joiden kautta nakyy tapani rakentaa backend-palveluita ja kehittaa jarjestelmia hallitusti.',
+      'Production- ja opiskelupohjaisia backend/tooling-caseja seka itse portfolioalusta: Telegram-botteja, realtime audio/LLM pipeline, Raspberry Pi edge-client, mallien benchmarkingia, infrastructure-automationia ja sivuston sisaltoarkkitehtuuria.',
     processLead:
       'Miten lahestyn backend-projekteja domainista ja arkkitehtuurista vakaaseen production-toimitukseen.',
     growthLead:

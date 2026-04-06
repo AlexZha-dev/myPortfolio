@@ -1,0 +1,83 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="176" y1="64" x2="1424" y2="840" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#102119"/>
+      <stop offset="1" stop-color="#08100C"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(278 176) rotate(28.4) scale(446 248)">
+      <stop stop-color="#8DFFC0" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#8DFFC0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1286 220) rotate(152) scale(430 270)">
+      <stop stop-color="#49D48A" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#49D48A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#173126" stop-opacity="0.94"/>
+      <stop offset="1" stop-color="#0A140F" stop-opacity="0.98"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" rx="32" fill="url(#bg)"/>
+  <rect width="1600" height="900" rx="32" fill="url(#glowA)"/>
+  <rect width="1600" height="900" rx="32" fill="url(#glowB)"/>
+
+  <g opacity="0.12">
+    <path d="M0 180H1600" stroke="#7DFFB1"/>
+    <path d="M0 360H1600" stroke="#7DFFB1"/>
+    <path d="M0 540H1600" stroke="#7DFFB1"/>
+    <path d="M0 720H1600" stroke="#7DFFB1"/>
+    <path d="M200 0V900" stroke="#7DFFB1"/>
+    <path d="M400 0V900" stroke="#7DFFB1"/>
+    <path d="M600 0V900" stroke="#7DFFB1"/>
+    <path d="M800 0V900" stroke="#7DFFB1"/>
+    <path d="M1000 0V900" stroke="#7DFFB1"/>
+    <path d="M1200 0V900" stroke="#7DFFB1"/>
+    <path d="M1400 0V900" stroke="#7DFFB1"/>
+  </g>
+
+  <rect x="96" y="92" width="1408" height="716" rx="36" fill="url(#panel)" stroke="#2B5843"/>
+
+  <text x="136" y="160" fill="#E6FFF0" font-family="monospace" font-size="40">Factorio Telegram Bot</text>
+  <text x="136" y="202" fill="#7EA08D" font-family="monospace" font-size="24">Private chat control for a Dockerized Factorio server</text>
+
+  <rect x="136" y="248" width="360" height="282" rx="28" fill="#101F18" stroke="#2E5A46"/>
+  <text x="168" y="306" fill="#7DFFB1" font-family="monospace" font-size="24">TELEGRAM BOT</text>
+  <text x="168" y="356" fill="#E6FFF0" font-family="monospace" font-size="22">/start</text>
+  <text x="168" y="392" fill="#E6FFF0" font-family="monospace" font-size="22">/server_status</text>
+  <text x="168" y="428" fill="#E6FFF0" font-family="monospace" font-size="22">/start_server</text>
+  <text x="168" y="464" fill="#E6FFF0" font-family="monospace" font-size="22">/stop_server</text>
+  <text x="168" y="500" fill="#B9D6C5" font-family="monospace" font-size="20">aiogram 3</text>
+
+  <rect x="620" y="248" width="360" height="282" rx="28" fill="#101F18" stroke="#2E5A46"/>
+  <text x="652" y="306" fill="#7DFFB1" font-family="monospace" font-size="24">ACCESS MODEL</text>
+  <text x="652" y="356" fill="#E6FFF0" font-family="monospace" font-size="22">pending</text>
+  <text x="652" y="392" fill="#E6FFF0" font-family="monospace" font-size="22">user</text>
+  <text x="652" y="428" fill="#E6FFF0" font-family="monospace" font-size="22">admin</text>
+  <text x="652" y="472" fill="#B9D6C5" font-family="monospace" font-size="20">SQLite + SQLAlchemy</text>
+  <text x="652" y="508" fill="#B9D6C5" font-family="monospace" font-size="20">role-based control</text>
+
+  <rect x="1104" y="248" width="360" height="282" rx="28" fill="#101F18" stroke="#2E5A46"/>
+  <text x="1136" y="306" fill="#7DFFB1" font-family="monospace" font-size="24">SERVER CONTROL</text>
+  <text x="1136" y="356" fill="#E6FFF0" font-family="monospace" font-size="20">docker compose -f</text>
+  <text x="1136" y="392" fill="#E6FFF0" font-family="monospace" font-size="20">docker-compose.factorio.yaml</text>
+  <text x="1136" y="436" fill="#B9D6C5" font-family="monospace" font-size="20">start / stop / status</text>
+  <text x="1136" y="472" fill="#B9D6C5" font-family="monospace" font-size="20">uptime + game address</text>
+
+  <path d="M496 388H620" stroke="#7DFFB1" stroke-width="4" stroke-linecap="round"/>
+  <path d="M980 388H1104" stroke="#7DFFB1" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="558" cy="388" r="8" fill="#7DFFB1"/>
+  <circle cx="1042" cy="388" r="8" fill="#7DFFB1"/>
+
+  <rect x="136" y="590" width="1328" height="160" rx="28" fill="#0D1A14" stroke="#274C3A"/>
+  <text x="168" y="644" fill="#7DFFB1" font-family="monospace" font-size="24">STACK</text>
+  <text x="168" y="694" fill="#E6FFF0" font-family="monospace" font-size="20">Python 3.14  |  Aiogram 3  |  SQLAlchemy 2  |  SQLite + aiosqlite  |  Alembic  |  Docker Compose</text>
+
+  <g transform="translate(1316 600)">
+    <circle cx="52" cy="52" r="48" fill="#142B20" stroke="#7DFFB1" stroke-width="3"/>
+    <path d="M52 20L74 30L84 52L74 74L52 84L30 74L20 52L30 30L52 20Z" fill="#7DFFB1" fill-opacity="0.24" stroke="#7DFFB1" stroke-width="3"/>
+    <circle cx="52" cy="52" r="10" fill="#7DFFB1"/>
+  </g>
+
+  <text x="96" y="816" fill="#7EA08D" font-family="monospace" font-size="20">Telegram bot  |  Dockerized game server management  |  2026</text>
+</svg>

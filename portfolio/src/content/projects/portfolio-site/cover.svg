@@ -1,21 +1,83 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="title desc">
-  <title id="title">Portfolio cover placeholder</title>
-  <desc id="desc">Green placeholder preview for the portfolio project cover.</desc>
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0b1712" />
-      <stop offset="100%" stop-color="#143022" />
+    <linearGradient id="bg" x1="180" y1="70" x2="1422" y2="836" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#102119"/>
+      <stop offset="1" stop-color="#08100C"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(286 186) rotate(26.4) scale(452 252)">
+      <stop stop-color="#8DFFC0" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#8DFFC0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1292 214) rotate(152.2) scale(434 270)">
+      <stop stop-color="#49D48A" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#49D48A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#173126" stop-opacity="0.94"/>
+      <stop offset="1" stop-color="#0A140F" stop-opacity="0.98"/>
     </linearGradient>
   </defs>
-  <rect width="800" height="520" fill="url(#bg)" rx="36" />
-  <circle cx="655" cy="118" r="92" fill="#7dffb1" fill-opacity="0.18" />
-  <rect x="58" y="76" width="684" height="368" rx="24" fill="#08110d" stroke="#3fae6f" stroke-opacity="0.35" />
-  <text x="96" y="150" fill="#7dffb1" font-family="Segoe UI, sans-serif" font-size="24">MyPortfolio</text>
-  <text x="96" y="208" fill="#d8f5e3" font-family="Segoe UI, sans-serif" font-size="46">Project Case Scaffold</text>
-  <text x="96" y="258" fill="#a6d7bb" font-family="Segoe UI, sans-serif" font-size="22">
-    Markdown content · typed config · i18n-ready architecture
-  </text>
-  <rect x="96" y="320" width="180" height="18" rx="9" fill="#1f4f38" />
-  <rect x="96" y="354" width="312" height="18" rx="9" fill="#173a2a" />
-  <rect x="96" y="388" width="244" height="18" rx="9" fill="#122d21" />
+
+  <rect width="1600" height="900" rx="32" fill="url(#bg)"/>
+  <rect width="1600" height="900" rx="32" fill="url(#glowA)"/>
+  <rect width="1600" height="900" rx="32" fill="url(#glowB)"/>
+
+  <g opacity="0.12">
+    <path d="M0 180H1600" stroke="#7DFFB1"/>
+    <path d="M0 360H1600" stroke="#7DFFB1"/>
+    <path d="M0 540H1600" stroke="#7DFFB1"/>
+    <path d="M0 720H1600" stroke="#7DFFB1"/>
+    <path d="M200 0V900" stroke="#7DFFB1"/>
+    <path d="M400 0V900" stroke="#7DFFB1"/>
+    <path d="M600 0V900" stroke="#7DFFB1"/>
+    <path d="M800 0V900" stroke="#7DFFB1"/>
+    <path d="M1000 0V900" stroke="#7DFFB1"/>
+    <path d="M1200 0V900" stroke="#7DFFB1"/>
+    <path d="M1400 0V900" stroke="#7DFFB1"/>
+  </g>
+
+  <rect x="96" y="92" width="1408" height="716" rx="36" fill="url(#panel)" stroke="#2B5843"/>
+
+  <text x="136" y="156" fill="#E6FFF0" font-family="monospace" font-size="38">MyPortfolio</text>
+  <text x="136" y="198" fill="#7EA08D" font-family="monospace" font-size="24">Markdown-driven multilingual portfolio platform</text>
+
+  <rect x="136" y="248" width="364" height="262" rx="28" fill="#101F18" stroke="#2E5A46"/>
+  <text x="170" y="304" fill="#7DFFB1" font-family="monospace" font-size="24">CONTENT</text>
+  <text x="170" y="356" fill="#E6FFF0" font-family="monospace" font-size="20">src/content/pages</text>
+  <text x="170" y="392" fill="#E6FFF0" font-family="monospace" font-size="20">src/content/projects</text>
+  <text x="170" y="428" fill="#B9D6C5" font-family="monospace" font-size="20">markdown + frontmatter</text>
+  <text x="170" y="464" fill="#B9D6C5" font-family="monospace" font-size="20">locale-aware loaders</text>
+
+  <rect x="618" y="248" width="364" height="262" rx="28" fill="#101F18" stroke="#2E5A46"/>
+  <text x="652" y="304" fill="#7DFFB1" font-family="monospace" font-size="24">UI</text>
+  <text x="652" y="356" fill="#E6FFF0" font-family="monospace" font-size="20">pages/home</text>
+  <text x="652" y="392" fill="#E6FFF0" font-family="monospace" font-size="20">ui + styles split</text>
+  <text x="652" y="428" fill="#B9D6C5" font-family="monospace" font-size="20">hash-based project modal</text>
+  <text x="652" y="464" fill="#B9D6C5" font-family="monospace" font-size="20">premium-tech atmosphere</text>
+
+  <rect x="1100" y="248" width="364" height="262" rx="28" fill="#101F18" stroke="#2E5A46"/>
+  <text x="1134" y="304" fill="#7DFFB1" font-family="monospace" font-size="24">BUILD</text>
+  <text x="1134" y="356" fill="#E6FFF0" font-family="monospace" font-size="20">Vite custom markdown loader</text>
+  <text x="1134" y="392" fill="#E6FFF0" font-family="monospace" font-size="20">gray-matter + zod</text>
+  <text x="1134" y="428" fill="#B9D6C5" font-family="monospace" font-size="20">React 19 + TypeScript</text>
+  <text x="1134" y="464" fill="#B9D6C5" font-family="monospace" font-size="20">ru / en / fi locales</text>
+
+  <path d="M500 380H618" stroke="#7DFFB1" stroke-width="4" stroke-linecap="round"/>
+  <path d="M982 380H1100" stroke="#7DFFB1" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="559" cy="380" r="8" fill="#7DFFB1"/>
+  <circle cx="1041" cy="380" r="8" fill="#7DFFB1"/>
+
+  <rect x="136" y="560" width="1328" height="164" rx="28" fill="#0D1A14" stroke="#274C3A"/>
+  <text x="170" y="614" fill="#7DFFB1" font-family="monospace" font-size="24">ARCHITECTURE</text>
+  <text x="170" y="662" fill="#E6FFF0" font-family="monospace" font-size="20">app  |  config  |  content  |  i18n  |  pages  |  shared</text>
+  <text x="170" y="700" fill="#7EA08D" font-family="monospace" font-size="20">content-driven portfolio engine for case studies, sections, locales, and presentation</text>
+
+  <g transform="translate(1316 594)">
+    <rect x="0" y="0" width="112" height="82" rx="18" fill="#13271E" stroke="#7DFFB1" stroke-width="3"/>
+    <rect x="16" y="16" width="80" height="14" rx="7" fill="#7DFFB1" fill-opacity="0.24"/>
+    <rect x="16" y="40" width="58" height="10" rx="5" fill="#7DFFB1" fill-opacity="0.42"/>
+    <rect x="16" y="58" width="70" height="10" rx="5" fill="#7DFFB1" fill-opacity="0.3"/>
+  </g>
+
+  <text x="96" y="816" fill="#7EA08D" font-family="monospace" font-size="20">Portfolio platform  |  content architecture + localization  |  2026</text>
 </svg>

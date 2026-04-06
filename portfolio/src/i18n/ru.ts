@@ -24,9 +24,9 @@ export const ru: UiDictionary = {
     eyebrow: 'Backend Python Engineer',
     availableNowTitle: 'Рабочие языки',
     availableNowText: 'Портфолио доступно на русском, английском и финском языках.',
-    selectedWorkTitle: 'Выбранные кейсы',
+    selectedWorkTitle: 'Реальные проекты',
     selectedWorkText:
-      'кейсы показывают мой подход к архитектуре сервисов, работе с данными и развитию backend-систем.',
+      'среди них production- и учебные кейсы: Telegram-боты, realtime voice pipeline, Raspberry Pi audio client, desktop-инструменты для тестирования моделей, развивающаяся productivity-система и сама платформа этого портфолио.',
     nextLocaleTitle: 'Фокус сейчас',
     nextLocaleText:
       'Усиливаю production-практики, архитектуру сервисов и качество сопровождения backend-решений.',
@@ -37,7 +37,7 @@ export const ru: UiDictionary = {
     stackLead:
       'Технологии, которые использую для API, слоя данных, интеграций, автоматизации и инфраструктуры.',
     projectsLead:
-      'Несколько кейсов, через которые видно мой инженерный подход к backend-сервисам и их развитию.',
+      'Production- и учебные backend/tooling-кейсы, а также сама платформа портфолио: Telegram-боты, realtime audio/LLM pipeline, Raspberry Pi edge client, benchmarking моделей, инфраструктурная автоматизация и контентная архитектура сайта.',
     processLead:
       'Как я подхожу к backend-проектам: от доменной модели и архитектуры до стабильной поставки в production.',
     growthLead:
