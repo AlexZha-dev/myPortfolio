@@ -1,0 +1,172 @@
+.app-atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.app-atmosphere__orb,
+.app-atmosphere__beam,
+.app-atmosphere__grid {
+  position: absolute;
+  inset: auto;
+  pointer-events: none;
+}
+
+.app-atmosphere__orb {
+  border-radius: 999px;
+  filter: blur(22px);
+  opacity: 0.75;
+}
+
+.app-atmosphere__orb--north {
+  top: -10rem;
+  left: 8%;
+  width: clamp(18rem, 28vw, 26rem);
+  height: clamp(18rem, 28vw, 26rem);
+  background: radial-gradient(circle, rgba(125, 255, 177, 0.18) 0, transparent 70%);
+  animation: auroraFloatNorth 22s ease-in-out infinite alternate;
+}
+
+.app-atmosphere__orb--south {
+  right: 6%;
+  bottom: -12rem;
+  width: clamp(20rem, 32vw, 30rem);
+  height: clamp(20rem, 32vw, 30rem);
+  background: radial-gradient(circle, rgba(63, 174, 111, 0.18) 0, transparent 72%);
+  animation: auroraFloatSouth 26s ease-in-out infinite alternate;
+}
+
+.app-atmosphere__orb--edge {
+  top: 26%;
+  right: -8rem;
+  width: clamp(14rem, 22vw, 22rem);
+  height: clamp(22rem, 34vw, 30rem);
+  background: radial-gradient(circle, rgba(91, 218, 148, 0.12) 0, transparent 68%);
+  animation: auroraFloatEdge 24s ease-in-out infinite alternate;
+}
+
+.app-atmosphere__beam {
+  top: 12%;
+  left: 46%;
+  width: min(44rem, 72vw);
+  height: 16rem;
+  transform: translateX(-50%) rotate(-16deg);
+  transform-origin: center;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(125, 255, 177, 0.02) 18%,
+    rgba(125, 255, 177, 0.12) 48%,
+    rgba(125, 255, 177, 0.02) 82%,
+    transparent 100%
+  );
+  filter: blur(32px);
+  opacity: 0.42;
+  animation: beamSweep 28s ease-in-out infinite alternate;
+}
+
+.app-atmosphere__grid {
+  inset: 0;
+  background:
+    linear-gradient(rgba(125, 255, 177, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(125, 255, 177, 0.045) 1px, transparent 1px);
+  background-size: 120px 120px;
+  mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.8) 0, transparent 72%);
+  opacity: 0.12;
+  transform: perspective(900px) rotateX(78deg) translateY(36vh) scale(1.8);
+  transform-origin: center bottom;
+  animation: gridDrift 22s linear infinite;
+}
+
+.app-shell::before,
+.app-shell::after {
+  content: '';
+  position: fixed;
+  z-index: 0;
+  border-radius: 999px;
+  pointer-events: none;
+  filter: blur(20px);
+  opacity: 0.52;
+}
+
+.app-shell::before {
+  top: 4rem;
+  right: -8rem;
+  width: clamp(18rem, 32vw, 28rem);
+  height: clamp(18rem, 32vw, 28rem);
+  background: radial-gradient(circle, rgba(125, 255, 177, 0.24) 0, transparent 68%);
+  animation: shellGlowDrift 18s ease-in-out infinite alternate;
+}
+
+.app-shell::after {
+  bottom: 6rem;
+  left: -7rem;
+  width: clamp(16rem, 26vw, 24rem);
+  height: clamp(16rem, 26vw, 24rem);
+  background: radial-gradient(circle, rgba(63, 174, 111, 0.2) 0, transparent 70%);
+  animation: shellGlowDrift 20s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes shellGlowDrift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(-26px, 18px, 0) scale(1.08);
+  }
+}
+
+@keyframes auroraFloatNorth {
+  from {
+    transform: translate3d(-2rem, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(3rem, 3rem, 0) scale(1.12);
+  }
+}
+
+@keyframes auroraFloatSouth {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(-4rem, -3rem, 0) scale(1.16);
+  }
+}
+
+@keyframes auroraFloatEdge {
+  from {
+    transform: translate3d(0, -2rem, 0) rotate(0deg);
+  }
+
+  to {
+    transform: translate3d(-3rem, 2rem, 0) rotate(-8deg);
+  }
+}
+
+@keyframes beamSweep {
+  from {
+    transform: translateX(-52%) rotate(-18deg) scaleX(0.96);
+    opacity: 0.22;
+  }
+
+  to {
+    transform: translateX(-46%) rotate(-10deg) scaleX(1.06);
+    opacity: 0.44;
+  }
+}
+
+@keyframes gridDrift {
+  from {
+    background-position: 0 0, 0 0;
+  }
+
+  to {
+    background-position: 0 120px, 120px 0;
+  }
+}
