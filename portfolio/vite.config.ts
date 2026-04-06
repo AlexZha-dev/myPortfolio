@@ -153,5 +153,6 @@ export default {
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/myPortfolio/',
   plugins: [markdownContentPlugin(), react()],
 })
