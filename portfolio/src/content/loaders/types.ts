@@ -4,10 +4,14 @@ export interface GalleryAssetWithUrl extends GalleryAsset {
   url: string
 }
 
-export interface ProjectTranslation extends ProjectFrontmatter {
-  body: string
+export interface ProjectTranslationSummary extends ProjectFrontmatter {
   sourcePath: string
   coverUrl: string
+}
+
+export interface ProjectTranslation
+  extends Omit<ProjectTranslationSummary, 'gallery'> {
+  body: string
   gallery: GalleryAssetWithUrl[]
 }
 

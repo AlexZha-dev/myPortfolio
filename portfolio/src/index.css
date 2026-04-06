@@ -119,6 +119,10 @@ a {
 }
 
 @media (max-width: 900px), (hover: none) and (pointer: coarse) {
+  html {
+    scroll-behavior: auto;
+  }
+
   body {
     animation: none;
   }

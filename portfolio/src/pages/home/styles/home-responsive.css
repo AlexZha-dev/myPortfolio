@@ -55,34 +55,34 @@
 }
 
 @media (max-width: 900px), (hover: none) and (pointer: coarse) {
-  .app-atmosphere {
-    position: absolute;
-  }
-
-  .app-atmosphere__beam,
-  .app-atmosphere__grid {
-    display: none;
-  }
-
-  .app-atmosphere__orb,
-  .app-shell::before,
-  .app-shell::after,
+  .app-shell--static::before,
+  .app-shell--static::after,
   .panel,
   .hero-panel,
   .project-modal__surface {
     animation: none;
   }
 
-  .app-atmosphere__orb,
-  .app-shell::before,
-  .app-shell::after {
-    filter: blur(16px);
-    opacity: 0.32;
+  .app-shell--static::before,
+  .app-shell--static::after {
+    display: none;
   }
 
-  .app-shell::before,
-  .app-shell::after {
-    position: absolute;
+  .app-shell--static .panel,
+  .app-shell--static .hero-panel,
+  .app-shell--static .project-modal__surface {
+    background:
+      linear-gradient(180deg, rgba(15, 32, 25, 0.98), rgba(8, 18, 14, 0.98));
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24);
+  }
+
+  .app-shell--static .locale-switcher,
+  .app-shell--static .action-button,
+  .app-shell--static .project-card__open,
+  .app-shell--static .project-card__actions a,
+  .app-shell--static .project-modal__close {
+    background: rgba(13, 27, 22, 0.96);
+    box-shadow: none;
   }
 
   .panel,
@@ -93,6 +93,10 @@
   .project-modal,
   .project-modal__close {
     backdrop-filter: none;
+  }
+
+  .app-shell--static .project-modal {
+    background: rgba(3, 8, 6, 0.88);
   }
 
   .glow-surface,

@@ -1,19 +1,27 @@
 import type { LocalizedProject } from '../../../content/loaders/projects'
+import type { ProjectTranslation } from '../../../content/loaders/types'
 import type { UiDictionary } from '../../../i18n/types'
 import { MarkdownContent } from '../../../shared/ui/MarkdownContent'
 
 interface ProjectModalProps {
   dictionary: UiDictionary
   project: LocalizedProject
+  projectTranslation: ProjectTranslation | null
+  loadState: 'idle' | 'loading' | 'ready' | 'error'
   onClose: () => void
 }
 
 export function ProjectModal({
   dictionary,
   project,
+  projectTranslation,
+  loadState,
   onClose,
 }: ProjectModalProps) {
-  const hasProjectLinks = Boolean(project.translation.repoUrl || project.translation.demoUrl)
+  const hasProjectLinks = Boolean(
+    projectTranslation?.repoUrl ?? project.translation.repoUrl ??
+    projectTranslation?.demoUrl ?? project.translation.demoUrl,
+  )
 
   return (
     <div className="project-modal" role="presentation" onClick={onClose}>
@@ -34,21 +42,28 @@ export function ProjectModal({
 
         <img
           className="project-modal__cover"
-          src={project.translation.coverUrl}
-          alt={project.translation.coverAlt}
+          src={projectTranslation?.coverUrl ?? project.translation.coverUrl}
+          alt={projectTranslation?.coverAlt ?? project.translation.coverAlt}
+          decoding="async"
         />
 
         <div className="project-modal__header">
           <div>
             <p className="project-modal__eyebrow">{dictionary.navigation.projects}</p>
-            <h2 id="project-modal-title">{project.translation.title}</h2>
-            <p className="project-modal__summary">{project.translation.summary}</p>
+            <h2 id="project-modal-title">
+              {projectTranslation?.title ?? project.translation.title}
+            </h2>
+            <p className="project-modal__summary">
+              {projectTranslation?.summary ?? project.translation.summary}
+            </p>
           </div>
-          <span className="project-modal__year">{project.translation.year}</span>
+          <span className="project-modal__year">
+            {projectTranslation?.year ?? project.translation.year}
+          </span>
         </div>
 
         <div className="tag-list">
-          {project.translation.stack.map((item) => (
+          {(projectTranslation?.stack ?? project.translation.stack).map((item) => (
             <span key={item} className="tag">
               {item}
             </span>
@@ -62,20 +77,20 @@ export function ProjectModal({
 
         {hasProjectLinks ? (
           <div className="project-card__actions">
-            {project.translation.repoUrl ? (
+            {(projectTranslation?.repoUrl ?? project.translation.repoUrl) ? (
               <a
                 className="glow-button"
-                href={project.translation.repoUrl}
+                href={projectTranslation?.repoUrl ?? project.translation.repoUrl}
                 target="_blank"
                 rel="noreferrer"
               >
                 GitHub
               </a>
             ) : null}
-            {project.translation.demoUrl ? (
+            {(projectTranslation?.demoUrl ?? project.translation.demoUrl) ? (
               <a
                 className="glow-button"
-                href={project.translation.demoUrl}
+                href={projectTranslation?.demoUrl ?? project.translation.demoUrl}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -85,13 +100,25 @@ export function ProjectModal({
           </div>
         ) : null}
 
-        <MarkdownContent>{project.translation.body}</MarkdownContent>
+        {projectTranslation ? (
+          <MarkdownContent>{projectTranslation.body}</MarkdownContent>
+        ) : (
+          <div
+            className="project-modal__loading"
+            aria-live="polite"
+            aria-busy={loadState === 'loading'}
+          >
+            <span className="project-modal__loading-line" />
+            <span className="project-modal__loading-line" />
+            <span className="project-modal__loading-line project-modal__loading-line--short" />
+          </div>
+        )}
 
-        {project.translation.gallery.length > 0 ? (
+        {projectTranslation && projectTranslation.gallery.length > 0 ? (
           <div className="project-gallery">
-            {project.translation.gallery.map((asset) => (
+            {projectTranslation.gallery.map((asset) => (
               <figure key={asset.src} className="project-gallery__item">
-                <img src={asset.url} alt={asset.alt} />
+                <img src={asset.url} alt={asset.alt} loading="lazy" decoding="async" />
                 {asset.caption ? <figcaption>{asset.caption}</figcaption> : null}
               </figure>
             ))}

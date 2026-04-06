@@ -1,25 +1,39 @@
 import { defaultLocale, enabledLocales } from '../../config/locale'
 import type { TranslationState } from '../../shared/types/content'
 import type { LocaleCode } from '../../shared/types/locale'
-import type { ProjectTranslation } from './types'
+import type {
+  ProjectTranslation,
+  ProjectTranslationSummary,
+} from './types'
 
-const projectMarkdownModules = import.meta.glob('../projects/*/*.md', {
-  query: '?content',
+const projectSummaryModules = import.meta.glob('../projects/*/*.md', {
+  query: '?summary',
   import: 'default',
   eager: true,
-}) as Record<string, ProjectTranslation>
+}) as Record<string, ProjectTranslationSummary>
+
+const projectContentModules = import.meta.glob('../projects/*/*.md', {
+  query: '?content',
+  import: 'default',
+}) as Record<string, () => Promise<ProjectTranslation>>
+
+interface ProjectTranslationEntry {
+  modulePath: string
+  translation: ProjectTranslationSummary
+}
 
 export interface LocalizedProject {
   projectId: string
   locale: LocaleCode
-  translation: ProjectTranslation
+  translation: ProjectTranslationSummary
   isFallback: boolean
   translationState: TranslationState
+  modulePath: string
 }
 
-type ProjectTranslationMap = Map<LocaleCode, ProjectTranslation>
+type ProjectTranslationMap = Map<LocaleCode, ProjectTranslationEntry>
 
-function getProjectSortTimestamp(translation: ProjectTranslation) {
+function getProjectSortTimestamp(translation: ProjectTranslationSummary) {
   if (translation.publishedAt) {
     const publishedAtTimestamp = Date.parse(translation.publishedAt)
 
@@ -38,7 +52,7 @@ function getProjectSortTimestamp(translation: ProjectTranslation) {
 function collectProjectTranslations() {
   const projectsById = new Map<string, ProjectTranslationMap>()
 
-  for (const translation of Object.values(projectMarkdownModules)) {
+  for (const [modulePath, translation] of Object.entries(projectSummaryModules)) {
     const localeMap = projectsById.get(translation.projectId) ?? new Map()
 
     if (localeMap.has(translation.locale)) {
@@ -47,19 +61,22 @@ function collectProjectTranslations() {
       )
     }
 
-    localeMap.set(translation.locale, translation)
+    localeMap.set(translation.locale, {
+      modulePath,
+      translation,
+    })
     projectsById.set(translation.projectId, localeMap)
   }
 
   for (const [projectId, translations] of projectsById) {
-    const defaultTranslation = translations.get(defaultLocale)
+    const defaultTranslation = translations.get(defaultLocale)?.translation
 
     if (!defaultTranslation) {
       throw new Error(`Project "${projectId}" is missing default locale "${defaultLocale}".`)
     }
 
     const hasPublishedTranslation = Array.from(translations.values()).some(
-      (translation) => translation.status === 'published',
+      ({ translation }) => translation.status === 'published',
     )
 
     if (hasPublishedTranslation && defaultTranslation.status !== 'published') {
@@ -86,22 +103,23 @@ function buildLocalizedProjects() {
       }
 
       const effectiveTranslation =
-        directTranslation && directTranslation.status === 'published'
+        directTranslation && directTranslation.translation.status === 'published'
           ? directTranslation
           : defaultTranslation
 
-      if (effectiveTranslation.status !== 'published') {
+      if (effectiveTranslation.translation.status !== 'published') {
         continue
       }
 
       localizedProjects.push({
         projectId,
         locale,
-        translation: effectiveTranslation,
-        isFallback: effectiveTranslation.locale !== locale,
+        translation: effectiveTranslation.translation,
+        isFallback: effectiveTranslation.translation.locale !== locale,
         translationState:
-          directTranslation?.translationState ??
-          (effectiveTranslation.locale === locale ? 'ready' : 'in_progress'),
+          directTranslation?.translation.translationState ??
+          (effectiveTranslation.translation.locale === locale ? 'ready' : 'in_progress'),
+        modulePath: effectiveTranslation.modulePath,
       })
     }
   }
@@ -127,7 +145,33 @@ function buildLocalizedProjects() {
 }
 
 const localizedProjects = buildLocalizedProjects()
+const projectContentCache = new Map<string, Promise<ProjectTranslation>>()
 
 export function getProjectsForLocale(locale: LocaleCode) {
   return localizedProjects.filter((project) => project.locale === locale)
+}
+
+export function loadProjectTranslation(project: LocalizedProject) {
+  const cachedTranslation = projectContentCache.get(project.modulePath)
+
+  if (cachedTranslation) {
+    return cachedTranslation
+  }
+
+  const loader = projectContentModules[project.modulePath]
+
+  if (!loader) {
+    return Promise.reject(
+      new Error(`Project content loader not found for "${project.translation.sourcePath}".`),
+    )
+  }
+
+  const translationPromise = loader().catch((error: unknown) => {
+    projectContentCache.delete(project.modulePath)
+    throw error
+  })
+
+  projectContentCache.set(project.modulePath, translationPromise)
+
+  return translationPromise
 }

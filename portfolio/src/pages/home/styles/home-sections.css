@@ -256,6 +256,23 @@
   color: var(--text-muted);
 }
 
+.markdown-content__loading {
+  display: grid;
+  gap: 10px;
+}
+
+.markdown-content__loading-line {
+  width: 100%;
+  height: 14px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(18, 38, 29, 0.96), rgba(12, 27, 21, 0.88));
+  border: 1px solid rgba(125, 255, 177, 0.08);
+}
+
+.markdown-content__loading-line--short {
+  width: 64%;
+}
+
 .markdown-content > :first-child {
   margin-top: 0;
 }

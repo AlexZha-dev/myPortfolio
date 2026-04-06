@@ -28,6 +28,8 @@ export function ProjectsSection({ dictionary, projects }: ProjectsSectionProps) 
                 className="project-card__cover"
                 src={project.translation.coverUrl}
                 alt={project.translation.coverAlt}
+                loading="lazy"
+                decoding="async"
               />
 
               <div className="project-card__header">

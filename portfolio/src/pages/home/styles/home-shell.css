@@ -6,6 +6,12 @@
   padding: 32px 20px 64px;
 }
 
+.app-shell--static::before,
+.app-shell--static::after {
+  content: none;
+  display: none;
+}
+
 .topbar,
 .content {
   width: min(1160px, 100%);

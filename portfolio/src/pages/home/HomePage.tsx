@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react'
 import { defaultLocale } from '../../config/locale'
-import { getProjectsForLocale } from '../../content/loaders/projects'
+import {
+  getProjectsForLocale,
+  loadProjectTranslation,
+} from '../../content/loaders/projects'
 import { getSectionContent } from '../../content/loaders/sections'
+import type { ProjectTranslation } from '../../content/loaders/types'
 import { getDictionary } from '../../i18n'
 import { parseProjectHash } from '../../shared/lib/project-links'
 import type { LocaleCode } from '../../shared/types/locale'
@@ -16,8 +20,21 @@ import { SoftSkillsSection } from './ui/SoftSkillsSection'
 import { StackSection } from './ui/StackSection'
 import './styles/home-page.css'
 
+const mobilePerformanceQuery = '(max-width: 900px), (hover: none) and (pointer: coarse)'
+
+function getShouldRenderAtmosphere() {
+  if (typeof window === 'undefined') {
+    return true
+  }
+
+  return !window.matchMedia(mobilePerformanceQuery).matches
+}
+
 function HomePage() {
   const [locale, setLocale] = useState<LocaleCode>(defaultLocale)
+  const [shouldRenderAtmosphere, setShouldRenderAtmosphere] = useState(
+    getShouldRenderAtmosphere,
+  )
   const [activeProjectId, setActiveProjectId] = useState<string | null>(() => {
     if (typeof window === 'undefined') {
       return null
@@ -25,6 +42,11 @@ function HomePage() {
 
     return parseProjectHash(window.location.hash)
   })
+  const [activeProjectTranslation, setActiveProjectTranslation] =
+    useState<ProjectTranslation | null>(null)
+  const [activeProjectLoadState, setActiveProjectLoadState] = useState<
+    'idle' | 'loading' | 'ready' | 'error'
+  >('idle')
 
   const dictionary = getDictionary(locale)
   const aboutSection = getSectionContent('about', locale)
@@ -54,6 +76,67 @@ function HomePage() {
   }, [])
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia(mobilePerformanceQuery)
+    const legacyMediaQuery = mediaQuery as MediaQueryList & {
+      addListener?: (listener: () => void) => void
+      removeListener?: (listener: () => void) => void
+    }
+    const syncAtmosphere = () => {
+      setShouldRenderAtmosphere(!mediaQuery.matches)
+    }
+
+    syncAtmosphere()
+
+    if (typeof mediaQuery.addEventListener === 'function') {
+      mediaQuery.addEventListener('change', syncAtmosphere)
+
+      return () => {
+        mediaQuery.removeEventListener('change', syncAtmosphere)
+      }
+    }
+
+    legacyMediaQuery.addListener?.(syncAtmosphere)
+
+    return () => {
+      legacyMediaQuery.removeListener?.(syncAtmosphere)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!activeProject) {
+      setActiveProjectTranslation(null)
+      setActiveProjectLoadState('idle')
+      return
+    }
+
+    let isCancelled = false
+
+    setActiveProjectLoadState('loading')
+    setActiveProjectTranslation(null)
+
+    void loadProjectTranslation(activeProject)
+      .then((translation) => {
+        if (isCancelled) {
+          return
+        }
+
+        setActiveProjectTranslation(translation)
+        setActiveProjectLoadState('ready')
+      })
+      .catch(() => {
+        if (isCancelled) {
+          return
+        }
+
+        setActiveProjectLoadState('error')
+      })
+
+    return () => {
+      isCancelled = true
+    }
+  }, [activeProject])
+
+  useEffect(() => {
     if (!activeProject) {
       return
     }
@@ -72,8 +155,8 @@ function HomePage() {
   }, [activeProject])
 
   return (
-    <div className="app-shell">
-      <HomeAtmosphere />
+    <div className={`app-shell${shouldRenderAtmosphere ? '' : ' app-shell--static'}`}>
+      {shouldRenderAtmosphere ? <HomeAtmosphere /> : null}
 
       <HomeTopbar
         dictionary={dictionary}
@@ -109,6 +192,8 @@ function HomePage() {
         <ProjectModal
           dictionary={dictionary}
           project={activeProject}
+          projectTranslation={activeProjectTranslation}
+          loadState={activeProjectLoadState}
           onClose={closeProject}
         />
       ) : null}

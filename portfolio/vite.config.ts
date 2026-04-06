@@ -20,6 +20,8 @@ function buildValidationMessage(filePath: string, issues: string[]) {
 
 function markdownContentPlugin(): Plugin {
   let root = ''
+  const contentQuery = '?content'
+  const summaryQuery = '?summary'
 
   return {
     name: 'portfolio-markdown-loader',
@@ -28,15 +30,22 @@ function markdownContentPlugin(): Plugin {
       root = config.root
     },
     load(id) {
-      if (!id.endsWith('.md?content')) {
+      const querySuffix = id.endsWith(contentQuery)
+        ? contentQuery
+        : id.endsWith(summaryQuery)
+          ? summaryQuery
+          : null
+
+      if (!querySuffix) {
         return null
       }
 
-      const filePath = id.slice(0, -'?content'.length)
+      const filePath = id.slice(0, -querySuffix.length)
       const rawContent = fs.readFileSync(filePath, 'utf8')
       const { data, content } = matter(rawContent)
       const normalizedFilePath = filePath.replaceAll('\\', '/')
       const sourcePath = contentSourcePath(root, filePath)
+      const isSummaryRequest = querySuffix === summaryQuery
 
       const isProjectMarkdown = normalizedFilePath.includes('/src/content/projects/')
       const isSectionMarkdown = normalizedFilePath.includes('/src/content/pages/')
@@ -87,6 +96,21 @@ function markdownContentPlugin(): Plugin {
           )
           .join(',\n')
 
+        if (isSummaryRequest) {
+          return `
+import __cover from ${JSON.stringify(result.data.cover)};
+
+const frontmatter = ${JSON.stringify(result.data)};
+const sourcePath = ${JSON.stringify(sourcePath)};
+
+export default {
+  ...frontmatter,
+  sourcePath,
+  coverUrl: __cover,
+};
+`
+        }
+
         return `
 import __cover from ${JSON.stringify(result.data.cover)};
 ${galleryImports}
@@ -134,6 +158,10 @@ export default {
         throw new Error(
           `section mismatch in ${sourcePath}. Expected "${sectionFolderName}", received "${result.data.section}".`,
         )
+      }
+
+      if (isSummaryRequest) {
+        throw new Error(`Section summary requests are not supported: ${sourcePath}`)
       }
 
       return `
