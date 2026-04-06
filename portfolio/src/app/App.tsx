@@ -76,6 +76,14 @@ function App() {
 
   return (
     <div className="app-shell">
+      <div className="app-atmosphere" aria-hidden="true">
+        <span className="app-atmosphere__orb app-atmosphere__orb--north" />
+        <span className="app-atmosphere__orb app-atmosphere__orb--south" />
+        <span className="app-atmosphere__orb app-atmosphere__orb--edge" />
+        <span className="app-atmosphere__beam" />
+        <span className="app-atmosphere__grid" />
+      </div>
+
       <header className="topbar">
         <div>
           <p className="topbar__eyebrow">{dictionary.siteTitle}</p>
@@ -83,11 +91,11 @@ function App() {
         </div>
 
         <div className="topbar__controls">
-          <div className="locale-switcher" aria-label={dictionary.localeSwitcherLabel}>
+          <div className="locale-switcher glow-surface" aria-label={dictionary.localeSwitcherLabel}>
             {enabledLocales.map((item) => (
               <button
                 key={item.code}
-                className={`locale-switcher__button${item.code === locale ? ' is-active' : ''}`}
+                className={`locale-switcher__button glow-button${item.code === locale ? ' is-active' : ''}`}
                 type="button"
                 onClick={() => setLocale(item.code)}
               >
@@ -97,19 +105,37 @@ function App() {
           </div>
 
           <nav className="section-nav" aria-label={dictionary.siteTitle}>
-            <a href="#hero">{dictionary.navigation.hero}</a>
-            <a href="#about">{dictionary.navigation.about}</a>
-            <a href="#stack">{dictionary.navigation.stack}</a>
-            <a href="#projects">{dictionary.navigation.projects}</a>
-            <a href="#process">{dictionary.navigation.process}</a>
-            <a href="#growth">{dictionary.navigation.growth}</a>
-            <a href="#contacts">{dictionary.navigation.contacts}</a>
+            <a className="section-nav__link glow-button" href="#hero">
+              {dictionary.navigation.hero}
+            </a>
+            <a className="section-nav__link glow-button" href="#about">
+              {dictionary.navigation.about}
+            </a>
+            <a className="section-nav__link glow-button" href="#stack">
+              {dictionary.navigation.stack}
+            </a>
+            <a className="section-nav__link glow-button" href="#projects">
+              {dictionary.navigation.projects}
+            </a>
+            <a className="section-nav__link glow-button" href="#process">
+              {dictionary.navigation.process}
+            </a>
+            <a className="section-nav__link glow-button" href="#growth">
+              {dictionary.navigation.growth}
+            </a>
+            <a className="section-nav__link glow-button" href="#contacts">
+              {dictionary.navigation.contacts}
+            </a>
           </nav>
         </div>
       </header>
 
       <main className="content">
-        <section id="hero" className="panel hero-panel" aria-labelledby="hero-title">
+        <section
+          id="hero"
+          className="panel glow-surface hero-panel"
+          aria-labelledby="hero-title"
+        >
           <p className="hero-panel__eyebrow">{dictionary.hero.eyebrow}</p>
           <h2 id="hero-title" className="hero-panel__title">
             {heroConfig.name}
@@ -121,7 +147,7 @@ function App() {
             {heroConfig.ctas.map((cta) => (
               <a
                 key={cta.id}
-                className={`action-button action-button--${cta.variant}`}
+                className={`action-button glow-button action-button--${cta.variant}`}
                 href={cta.href}
                 target={cta.external ? '_blank' : undefined}
                 rel={cta.external ? 'noreferrer' : undefined}
@@ -132,7 +158,7 @@ function App() {
           </div>
 
           <div className="status-grid">
-            <article className="status-card">
+            <article className="status-card glow-surface">
               <h3>{dictionary.hero.availableNowTitle}</h3>
               <div className="tag-list">
                 {enabledLocales.map((item) => (
@@ -144,32 +170,43 @@ function App() {
               <p className="status-card__note">{dictionary.hero.availableNowText}</p>
             </article>
 
-            <article className="status-card">
+            <article className="status-card glow-surface">
               <h3>{dictionary.hero.selectedWorkTitle}</h3>
               <p className="status-card__count">{projects.length}</p>
               <p className="status-card__note">{dictionary.hero.selectedWorkText}</p>
             </article>
 
-            <article className="status-card">
+            <article className="status-card glow-surface">
               <h3>{dictionary.hero.nextLocaleTitle}</h3>
               <p className="status-card__note">{dictionary.hero.nextLocaleText}</p>
             </article>
           </div>
         </section>
 
-        <section id="about" className="panel" aria-labelledby="about-title">
+        <section
+          id="about"
+          className="panel glow-surface"
+          aria-labelledby="about-title"
+        >
           <h2 id="about-title">{aboutSection.title}</h2>
           {aboutSection.lead ? <p>{aboutSection.lead}</p> : null}
           <MarkdownContent>{aboutSection.body}</MarkdownContent>
         </section>
 
-        <section id="stack" className="panel" aria-labelledby="stack-title">
+        <section
+          id="stack"
+          className="panel glow-surface"
+          aria-labelledby="stack-title"
+        >
           <h2 id="stack-title">{dictionary.navigation.stack}</h2>
           <p>{dictionary.sections.stackLead}</p>
 
           <div className="stack-grid">
             {stackConfig.map((group) => (
-              <article key={group.id} className="stack-card">
+              <article
+                key={group.id}
+                className="stack-card glow-surface"
+              >
                 <h3>{resolveLocalizedText(group.title, locale, defaultLocale)}</h3>
                 <ul>
                   {group.items.map((item) => (
@@ -188,7 +225,11 @@ function App() {
           </div>
         </section>
 
-        <section id="projects" className="panel" aria-labelledby="projects-title">
+        <section
+          id="projects"
+          className="panel glow-surface"
+          aria-labelledby="projects-title"
+        >
           <h2 id="projects-title">{dictionary.navigation.projects}</h2>
           <p>{dictionary.sections.projectsLead}</p>
 
@@ -199,7 +240,10 @@ function App() {
                 project.isFallback || project.translationState === 'in_progress'
 
               return (
-                <article key={`${project.locale}-${project.projectId}`} className="project-card">
+                <article
+                  key={`${project.locale}-${project.projectId}`}
+                  className="project-card glow-surface"
+                >
                   <img
                     className="project-card__cover"
                     src={project.translation.coverUrl}
@@ -228,7 +272,7 @@ function App() {
                   </div>
 
                   <div className="project-card__footer">
-                    <a className="project-card__open" href={projectHash}>
+                    <a className="project-card__open glow-button" href={projectHash}>
                       {dictionary.actions.viewCase}
                     </a>
                   </div>
@@ -243,7 +287,7 @@ function App() {
             <section
               key={section.section}
               id={section.section}
-              className="panel"
+              className="panel glow-surface"
               aria-labelledby={`${section.section}-title`}
             >
               <h2 id={`${section.section}-title`}>{section.title}</h2>
@@ -252,14 +296,23 @@ function App() {
             </section>
           ))}
 
-          <section id="contacts" className="panel" aria-labelledby="contacts-title">
+          <section
+            id="contacts"
+            className="panel glow-surface"
+            aria-labelledby="contacts-title"
+          >
             <h2 id="contacts-title">{dictionary.navigation.contacts}</h2>
             <p>{dictionary.sections.contactsLead}</p>
 
             <ul className="contacts-list">
               {contactsConfig.map((contact) => (
                 <li key={contact.id}>
-                  <a href={contact.href} target="_blank" rel="noreferrer">
+                  <a
+                    className="contact-link glow-button"
+                    href={contact.href}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     {resolveLocalizedText(contact.label, locale, defaultLocale)}
                   </a>
                 </li>
@@ -276,7 +329,7 @@ function App() {
           onClick={closeProject}
         >
           <div
-            className="project-modal__surface"
+            className="project-modal__surface glow-surface"
             role="dialog"
             aria-modal="true"
             aria-labelledby="project-modal-title"
@@ -284,7 +337,7 @@ function App() {
           >
             <button
               type="button"
-              className="project-modal__close"
+              className="project-modal__close glow-button"
               onClick={closeProject}
             >
               {dictionary.actions.close}
@@ -324,6 +377,7 @@ function App() {
             <div className="project-card__actions">
               {activeProject.translation.repoUrl ? (
                 <a
+                  className="glow-button"
                   href={activeProject.translation.repoUrl}
                   target="_blank"
                   rel="noreferrer"
@@ -333,6 +387,7 @@ function App() {
               ) : null}
               {activeProject.translation.demoUrl ? (
                 <a
+                  className="glow-button"
                   href={activeProject.translation.demoUrl}
                   target="_blank"
                   rel="noreferrer"

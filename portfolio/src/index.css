@@ -2,6 +2,7 @@
   --bg: #07110d;
   --surface: #0d1b16;
   --surface-soft: rgba(13, 27, 22, 0.84);
+  --surface-glass: rgba(9, 19, 15, 0.72);
   --border-soft: rgba(76, 129, 102, 0.22);
   --border-strong: rgba(125, 255, 177, 0.18);
   --text-strong: #d8f5e3;
@@ -9,6 +10,8 @@
   --text-soft: #7ea08d;
   --accent: #3fae6f;
   --accent-strong: #7dffb1;
+  --glow-soft: rgba(125, 255, 177, 0.16);
+  --glow-strong: rgba(125, 255, 177, 0.3);
   --shadow-card: 0 20px 50px rgba(0, 0, 0, 0.28);
   --font-sans: 'Space Grotesk', 'Segoe UI', sans-serif;
   --font-display: 'Clash Display', 'Trebuchet MS', sans-serif;
@@ -36,9 +39,14 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden;
   background:
-    radial-gradient(circle at top, rgba(63, 174, 111, 0.18), transparent 24%),
+    radial-gradient(circle at 14% 18%, rgba(125, 255, 177, 0.18) 0, transparent 28%),
+    radial-gradient(circle at 86% 10%, rgba(63, 174, 111, 0.16) 0, transparent 24%),
+    radial-gradient(circle at 50% 100%, rgba(20, 64, 46, 0.44) 0, transparent 42%),
     linear-gradient(180deg, #08110d 0%, #07110d 55%, #050b09 100%);
+  background-size: 140% 140%, 130% 130%, 120% 120%, 100% 100%;
+  animation: bodyAurora 22s ease-in-out infinite alternate;
 }
 
 #root {
@@ -81,4 +89,29 @@ a {
 :focus-visible {
   outline: 2px solid var(--accent-strong);
   outline-offset: 3px;
+}
+
+::selection {
+  color: var(--text-strong);
+  background: rgba(125, 255, 177, 0.24);
+}
+
+@keyframes bodyAurora {
+  from {
+    background-position: 0% 0%, 100% 0%, 50% 100%, 0% 0%;
+  }
+
+  to {
+    background-position: 12% 10%, 90% 16%, 52% 94%, 0% 0%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    animation: none;
+  }
 }
