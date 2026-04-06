@@ -1,14 +1,14 @@
----
+﻿---
 section: "growth"
 locale: "en"
 title: "Growth"
-lead: "A section about skill growth, goals, and the next development step."
+lead: "How I deepen backend expertise, broaden perspective, and keep strengthening as a Python engineer."
 translationState: "ready"
-seoDescription: "Growth section for the portfolio."
+seoDescription: "Growth section for a Backend Python portfolio."
 ---
 
-Right now I am especially interested in moving toward more mature frontend systems: not just building isolated screens, but shaping products with strong logic, consistent visual language, and a confident user rhythm.
+My main growth direction right now is deeper Python backend work: service architecture, performance, reliable data handling, operational practices, and overall production quality.
 
-I want to keep growing in the architectural side of React applications, strengthen my product thinking, and continue building interfaces that feel intentional rather than accidental.
+At the same time, I keep building frontend awareness in React and TypeScript. It helps me understand the client side better, design cleaner APIs, and collaborate more effectively in teams where backend and interface decisions are tightly connected.
 
-The next step for me is to work on more layered projects where clean engineering structure and expressive visual execution can exist together.
+The next step for me is to grow further as a backend engineer: take on more demanding production systems, deepen architectural judgment, and build services that stay clean and manageable as product and load evolve.

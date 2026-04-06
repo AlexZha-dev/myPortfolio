@@ -33,6 +33,8 @@ export interface UiDictionary {
     projectsLead: string
     processLead: string
     growthLead: string
+    softSkillsTitle: string
+    softSkillsLead: string
     contactsLead: string
   }
 }

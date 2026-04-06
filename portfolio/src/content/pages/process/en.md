@@ -1,14 +1,14 @@
----
+﻿---
 section: "process"
 locale: "en"
 title: "Process"
-lead: "A section about the working approach from structure to interface details."
+lead: "How I approach backend projects: from domain and architecture to stable production delivery."
 translationState: "ready"
-seoDescription: "Process section for the portfolio."
+seoDescription: "Process section for a Backend Python portfolio."
 ---
 
-My process usually starts with overall shape rather than isolated details. I want to understand the product's character first: what should feel immediate, where the attention should go, and how the interface should guide the user.
+I usually start not with the stack, but with the shape of the problem: expected load, responsibility boundaries, the lifecycle of data, critical integrations, and what the team will need to maintain comfortably over time.
 
-From there I move into structure: section order, content hierarchy, repeated patterns, and the balance between clarity and visual identity. At this stage the product already starts to reveal whether it needs restraint or more expressive density.
+From there I choose the architectural approach. My default orientation is best practices: separation of layers, explicit contracts, controlled dependencies, migrations, validation, and a predictable code structure. At the same time, I am not tied to a single pattern: I can build both application monoliths and microservice-based solutions when the product actually calls for it.
 
-Only after that do I focus on refinement: spacing rhythm, typography, color balance, contrast, micro-interactions, and the overall sense of polish.
+The final stage is not just shipping endpoints. It is making the system operational: data access, background jobs, caching, logging, containerization, environment configuration, and a clear path for further service growth.

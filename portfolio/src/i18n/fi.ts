@@ -1,8 +1,8 @@
-import type { UiDictionary } from './types'
+﻿import type { UiDictionary } from './types'
 
 export const fi: UiDictionary = {
   siteTitle: 'MyPortfolio',
-  siteSubtitle: 'Kayttoliittymia, joissa yhdistyvat rakenne, tunnelma ja huolellinen viimeistely',
+  siteSubtitle: 'Python-backendeja: API-rajapintoja, dataa, integraatioita ja kasvua kestavaa arkkitehtuuria',
   localeSwitcherLabel: 'Kielen valitsin',
   actions: {
     viewCase: 'Avaa case',
@@ -18,31 +18,34 @@ export const fi: UiDictionary = {
     contacts: 'Yhteystiedot',
   },
   badges: {
-    translationInProgress: 'Kaannos kesken',
+    translationInProgress: 'Kehityksessa',
   },
   hero: {
-    eyebrow: 'Frontend Developer',
-    availableNowTitle: 'Saatavilla nyt',
-    availableNowText: 'Portfolio on jo saatavilla venajaksi ja englanniksi.',
-    selectedWorkTitle: 'Valitut tyot',
+    eyebrow: 'Backend Python Engineer',
+    availableNowTitle: 'Tyokielet',
+    availableNowText: 'Portfolio on saatavilla venajaksi, englanniksi ja suomeksi.',
+    selectedWorkTitle: 'Valitut caset',
     selectedWorkText:
-      'projektia nayttavat tapani ajatella kayttoliittymia, rakennetta ja yllapidettavia frontend-ratkaisuja.',
-    nextLocaleTitle: 'Seuraava vaihe',
+      'caset nayttavat tapani rakentaa palveluarkkitehtuuria, datakerrosta ja kehitettavia backend-jarjestelmia.',
+    nextLocaleTitle: 'Nykyinen fokus',
     nextLocaleText:
-      'Suomi on jo huomioitu sisaltorakenteessa ja otetaan kayttoon seuraavassa vaiheessa.',
+      'Vahvistan production-kaytantoja, palveluarkkitehtuuria ja jarjestelmien yllapidettavyytta.',
   },
   sections: {
     aboutLead:
-      'Lyhyt katsaus siihen, miten lahestyn tuotteita, frontend-rakennetta ja visuaalisia ratkaisuja.',
+      'Miten lahestyn Python-backendeja, palveluarkkitehtuuria ja production-tasoista ohjelmistotyota.',
     stackLead:
-      'Teknologiat ja tyokalut, joilla rakennan ilmeikkaita ja yllapidettavia kayttoliittymia.',
+      'Teknologiat, joita kaytan API-rajapinnoissa, datakerroksessa, integraatioissa, automaatiossa ja toimituksessa.',
     projectsLead:
-      'Muutama projekti, jotka nayttavat hyvin tapani yhdistaa jarjestelmallisyys, tunnelma ja kaytettava UI.',
+      'Muutama case, joiden kautta nakyy tapani rakentaa backend-palveluita ja kehittaa jarjestelmia hallitusti.',
     processLead:
-      'Miten etenen ideasta rakenteeseen, visuaaliseen viimeistelyyn ja vakaaseen lopputulokseen.',
+      'Miten lahestyn backend-projekteja domainista ja arkkitehtuurista vakaaseen production-toimitukseen.',
     growthLead:
-      'Mita kehitän nyt, mihin haluan siirtya seuraavaksi ja miten frontend-suuntani rakentuu.',
+      'Miten syvennan backend-osaamista, vahvistan Pythonia ja laajennan ymmarrysta frontend-puolelle.',
+    softSkillsTitle: 'Soft Skills',
+    softSkillsLead:
+      'Miten toimin ihmisten, paatosten ja insinoorityon vastuun kanssa osana tiimia.',
     contactsLead:
-      'Jos tapani rakentaa tuotteita tuntuu oikealta, keskustelen mielellani projektista tai yhteistyosta.',
+      'Jos tarvitset Python-backendia, API-rajapintoja, integraatioita tai palveluarkkitehtuuria, keskustelen mielellani projektista.',
   },
 }

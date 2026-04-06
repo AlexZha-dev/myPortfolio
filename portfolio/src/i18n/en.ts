@@ -1,8 +1,8 @@
-import type { UiDictionary } from './types'
+﻿import type { UiDictionary } from './types'
 
 export const en: UiDictionary = {
   siteTitle: 'MyPortfolio',
-  siteSubtitle: 'Interfaces with character, structure, and calm attention to detail',
+  siteSubtitle: 'Python backend systems: APIs, data, integrations, and architecture built to evolve',
   localeSwitcherLabel: 'Language switcher',
   actions: {
     viewCase: 'View case',
@@ -18,31 +18,34 @@ export const en: UiDictionary = {
     contacts: 'Contacts',
   },
   badges: {
-    translationInProgress: 'Translation in progress',
+    translationInProgress: 'In development',
   },
   hero: {
-    eyebrow: 'Frontend Developer',
-    availableNowTitle: 'Available now',
-    availableNowText: 'The portfolio is already available in Russian and English.',
+    eyebrow: 'Backend Python Engineer',
+    availableNowTitle: 'Working languages',
+    availableNowText: 'The portfolio is available in Russian, English, and Finnish.',
     selectedWorkTitle: 'Selected work',
     selectedWorkText:
-      'projects show how I think about interface structure, visual tone, and maintainable frontend systems.',
-    nextLocaleTitle: 'Next locale',
+      'case studies reflect how I approach service architecture, data work, and backend system growth.',
+    nextLocaleTitle: 'Current focus',
     nextLocaleText:
-      'Finnish is already planned in the content architecture and will be enabled in a separate stage.',
+      'Strengthening production practices, service architecture, and long-term maintainability.',
   },
   sections: {
     aboutLead:
-      'A short look at the way I approach products, frontend systems, and visual decisions.',
+      'How I approach Python backend work, service architecture, and production-grade engineering.',
     stackLead:
-      'The technologies and tools I use to build expressive, maintainable interfaces.',
+      'The technologies I use for APIs, data layers, integrations, automation, and delivery infrastructure.',
     projectsLead:
-      'A few projects that best reflect my taste in interface work, systems thinking, and presentation.',
+      'A few cases that show my engineering approach to backend services and system evolution.',
     processLead:
-      'How I move from idea and structure to visual polish and a stable user-facing result.',
+      'How I move through backend work: from domain and architecture to stable production delivery.',
     growthLead:
-      'What I am sharpening now, where I want to go next, and how my frontend direction is evolving.',
+      'How I am deepening backend engineering, strengthening Python, and expanding frontend awareness.',
+    softSkillsTitle: 'Soft Skills',
+    softSkillsLead:
+      'How I work with people, decisions, and engineering responsibility inside a team.',
     contactsLead:
-      'If my way of building products feels close to what you need, I would be glad to talk.',
+      'If you need Python backend work, APIs, integrations, or service architecture, I would be glad to talk.',
   },
 }

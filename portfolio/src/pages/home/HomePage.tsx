@@ -12,6 +12,7 @@ import { HomeAtmosphere } from './ui/HomeAtmosphere'
 import { HomeTopbar } from './ui/HomeTopbar'
 import { ProjectModal } from './ui/ProjectModal'
 import { ProjectsSection } from './ui/ProjectsSection'
+import { SoftSkillsSection } from './ui/SoftSkillsSection'
 import { StackSection } from './ui/StackSection'
 import './styles/home-page.css'
 
@@ -97,6 +98,8 @@ function HomePage() {
           {[processSection, growthSection].map((section) => (
             <ContentSection key={section.section} section={section} />
           ))}
+
+          <SoftSkillsSection dictionary={dictionary} locale={locale} />
 
           <ContactsSection dictionary={dictionary} locale={locale} />
         </div>

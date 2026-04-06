@@ -1,4 +1,4 @@
-import type { LocaleCode, LocaleDefinition } from '../shared/types/locale'
+﻿import type { LocaleCode, LocaleDefinition } from '../shared/types/locale'
 
 export const localeRegistry = [
   {
@@ -21,18 +21,16 @@ export const localeRegistry = [
     code: 'fi',
     label: 'Finnish',
     nativeLabel: 'Suomi',
-    status: 'planned',
+    status: 'active',
     isDefault: false,
-    isEnabled: false,
+    isEnabled: true,
   },
 ] satisfies LocaleDefinition[]
 
 export const defaultLocale: LocaleCode = 'ru'
 
 export const enabledLocales = localeRegistry.filter((locale) => locale.isEnabled)
-export const plannedLocales = localeRegistry.filter(
-  (locale) => locale.status === 'planned',
-)
+export const plannedLocales: LocaleDefinition[] = []
 
 export function isLocaleEnabled(localeCode: LocaleCode) {
   return localeRegistry.some(

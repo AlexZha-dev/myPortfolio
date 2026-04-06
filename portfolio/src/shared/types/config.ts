@@ -34,3 +34,10 @@ export interface ContactItem {
   type: 'github' | 'telegram' | 'email' | 'resume' | 'other'
   icon?: string
 }
+
+export interface SoftSkillItem {
+  id: string
+  title: LocalizedText
+  summary: LocalizedText
+  details: LocalizedText
+}
