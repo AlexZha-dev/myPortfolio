@@ -85,6 +85,11 @@
     box-shadow: none;
   }
 
+  .app-shell--static .action-button--primary {
+    color: var(--bg);
+    background: linear-gradient(135deg, #7dffb1, #5fd68e);
+  }
+
   .panel,
   .hero-panel,
   .action-button,
