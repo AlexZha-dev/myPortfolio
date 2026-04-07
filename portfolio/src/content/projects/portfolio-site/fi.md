@@ -35,14 +35,14 @@ Sivusto on rakennettu `React 19`:lla, `TypeScriptilla` ja `Vitella`. Arkkitehtuu
 - `src/pages/home`: paa-sivu, jaettuna `ui`- ja `styles`-osiin;
 - `src/content`: markdown-sisalto osioille ja projekteille;
 - `src/content/loaders`: sisallon kokoaminen ja locale-aware palautus;
-- `src/i18n`: kayttoliittyman sanakirjat kielille `ru`, `en` ja `fi`;
+- `src/i18n`: kayttoliittyman sanakirjat kielille `ru`, `en`, `fi` ja `uk`;
 - `src/shared`: skeemat, tyypit, markdown-renderer ja apuutilit.
 
 Oleellista on myos se, etta rakenne on jo valmiiksi valmisteltu kasvamaan kerroksilla `app`, `pages`, `shared`, `config` ja `content`, seka varauksilla tasoille `entities`, `features` ja `widgets`.
 
 ### Mita tassa on toteutettu
 
-- monikielinen UI kielilla `ru`, `en` ja `fi`;
+- monikielinen UI kielilla `ru`, `en`, `fi` ja `uk`;
 - markdown-pohjaiset projekticaset ja tekstiosiot;
 - frontmatter-validointi `zodilla`;
 - locale-aware sisallolataus fallback-kaytoksella;

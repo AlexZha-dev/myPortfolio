@@ -60,7 +60,7 @@
   <text x="1134" y="356" fill="#E6FFF0" font-family="monospace" font-size="20">Vite custom markdown loader</text>
   <text x="1134" y="392" fill="#E6FFF0" font-family="monospace" font-size="20">gray-matter + zod</text>
   <text x="1134" y="428" fill="#B9D6C5" font-family="monospace" font-size="20">React 19 + TypeScript</text>
-  <text x="1134" y="464" fill="#B9D6C5" font-family="monospace" font-size="20">ru / en / fi locales</text>
+  <text x="1134" y="464" fill="#B9D6C5" font-family="monospace" font-size="20">4 active locales</text>
 
   <path d="M500 380H618" stroke="#7DFFB1" stroke-width="4" stroke-linecap="round"/>
   <path d="M982 380H1100" stroke="#7DFFB1" stroke-width="4" stroke-linecap="round"/>

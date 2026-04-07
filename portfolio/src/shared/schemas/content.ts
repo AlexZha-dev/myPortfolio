@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-const localeCodeSchema = z.enum(['ru', 'en', 'fi'])
+const localeCodeSchema = z.enum(['ru', 'en', 'fi', 'uk'])
 
 export const translationStateSchema = z.enum(['ready', 'in_progress'])
 export const projectStatusSchema = z.enum(['draft', 'published', 'archived'])

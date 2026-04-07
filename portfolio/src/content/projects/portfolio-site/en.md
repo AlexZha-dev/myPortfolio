@@ -35,14 +35,14 @@ The site is built with `React 19`, `TypeScript`, and `Vite`. The main architectu
 - `src/pages/home`: the main page split into `ui` and `styles`;
 - `src/content`: markdown content for sections and projects;
 - `src/content/loaders`: content assembly and locale-aware delivery;
-- `src/i18n`: interface dictionaries for `ru`, `en`, and `fi`;
+- `src/i18n`: interface dictionaries for `ru`, `en`, `fi`, and `uk`;
 - `src/shared`: schemas, types, markdown renderer, and support utilities.
 
 It also matters that the structure is already prepared for further scaling with `app`, `pages`, `shared`, `config`, and `content`, while reserving boundaries for `entities`, `features`, and `widgets`.
 
 ### What is implemented here
 
-- multilingual UI in `ru`, `en`, and `fi`;
+- multilingual UI in `ru`, `en`, `fi`, and `uk`;
 - markdown-driven case studies and page sections;
 - frontmatter validation through `zod`;
 - locale-aware content loading with fallback behavior;

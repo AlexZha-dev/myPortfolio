@@ -18,6 +18,13 @@ const navigationItems: Array<keyof UiDictionary['navigation']> = [
   'contacts',
 ]
 
+const localeButtonOrder: LocaleCode[] = ['uk', 'ru', 'en', 'fi']
+
+const orderedEnabledLocales = [...enabledLocales].sort(
+  (left, right) =>
+    localeButtonOrder.indexOf(left.code) - localeButtonOrder.indexOf(right.code),
+)
+
 export function HomeTopbar({
   dictionary,
   locale,
@@ -32,7 +39,7 @@ export function HomeTopbar({
 
       <div className="topbar__controls">
         <div className="locale-switcher glow-surface" aria-label={dictionary.localeSwitcherLabel}>
-          {enabledLocales.map((item) => (
+          {orderedEnabledLocales.map((item) => (
             <button
               key={item.code}
               className={`locale-switcher__button glow-button${item.code === locale ? ' is-active' : ''}`}

@@ -51,7 +51,7 @@ export function HeroSection({
           <div className="tag-list">
             {enabledLocales.map((item) => (
               <span key={item.code} className="tag">
-                {item.code.toUpperCase()} · {item.nativeLabel}
+                {item.code.toUpperCase()} | {item.nativeLabel}
               </span>
             ))}
           </div>

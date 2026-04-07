@@ -41,7 +41,7 @@ Projektin perusidea on pitaa kevyt paivittainen workflow Telegramissa: kaynnista
 - work sessionien aloitus ja lopetus;
 - tehtava- ja tyoaikastatistiikka;
 - aikataulu-, tyotunti-, aikavyohyke- ja reminder-asetukset;
-- kayttoliittyman lokalisointi: `ru`, `en`, `fi`;
+- kayttoliittyman lokalisointi: `ru`, `en`, `fi`, `uk`;
 - ajastetut muistutukset ja satunnaiset nudget aktiivisille tehtaville.
 
 ### Tekninen stack

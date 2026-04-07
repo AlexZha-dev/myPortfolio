@@ -25,6 +25,14 @@ export const localeRegistry = [
     isDefault: false,
     isEnabled: true,
   },
+  {
+    code: 'uk',
+    label: 'Ukrainian',
+    nativeLabel: 'Українська',
+    status: 'active',
+    isDefault: false,
+    isEnabled: true,
+  },
 ] satisfies LocaleDefinition[]
 
 export const defaultLocale: LocaleCode = 'ru'

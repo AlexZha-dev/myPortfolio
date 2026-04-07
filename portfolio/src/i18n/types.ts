@@ -5,6 +5,8 @@ export interface UiDictionary {
   actions: {
     viewCase: string
     close: string
+    repository: string
+    liveDemo: string
   }
   navigation: {
     hero: string

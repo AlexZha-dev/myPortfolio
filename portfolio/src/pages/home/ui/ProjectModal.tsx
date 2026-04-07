@@ -84,7 +84,7 @@ export function ProjectModal({
                 target="_blank"
                 rel="noreferrer"
               >
-                GitHub
+                {dictionary.actions.repository}
               </a>
             ) : null}
             {(projectTranslation?.demoUrl ?? project.translation.demoUrl) ? (
@@ -94,7 +94,7 @@ export function ProjectModal({
                 target="_blank"
                 rel="noreferrer"
               >
-                Live Demo
+                {dictionary.actions.liveDemo}
               </a>
             ) : null}
           </div>

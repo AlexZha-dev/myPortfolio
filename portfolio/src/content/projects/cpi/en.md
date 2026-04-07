@@ -41,7 +41,7 @@ The main idea is to keep a lightweight daily workflow inside Telegram: start and
 - start and finish work sessions;
 - task and work-time statistics;
 - schedule, timezone, work-hour, and reminder settings;
-- interface localization for `ru`, `en`, and `fi`;
+- interface localization for `ru`, `en`, `fi`, and `uk`;
 - scheduled reminders and random nudges for active tasks.
 
 ### Tech stack

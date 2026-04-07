@@ -7,6 +7,8 @@ export const fi: UiDictionary = {
   actions: {
     viewCase: 'Avaa case',
     close: 'Sulje',
+    repository: 'Repositorio',
+    liveDemo: 'Demo',
   },
   navigation: {
     hero: 'Aloitus',
@@ -23,7 +25,7 @@ export const fi: UiDictionary = {
   hero: {
     eyebrow: 'Backend Python Engineer',
     availableNowTitle: 'Tyokielet',
-    availableNowText: 'Portfolio on saatavilla venajaksi, englanniksi ja suomeksi.',
+    availableNowText: 'Portfolio on saatavilla venajaksi, englanniksi, suomeksi ja ukrainaksi.',
     selectedWorkTitle: 'Oikeat projektit',
     selectedWorkText:
       'mukana on production- ja opiskelucaseja: Telegram-botteja, realtime voice pipeline, Raspberry Pi -audioclient, desktop-tyokaluja mallien benchmarkingiin, kehittyva productivity-jarjestelma seka itse portfolioalusta.',

@@ -53,7 +53,7 @@
   <text x="640" y="368" fill="#E6FFF0" font-family="monospace" font-size="22">aiogram 3</text>
   <text x="640" y="406" fill="#B9D6C5" font-family="monospace" font-size="20">daily actions interface</text>
   <text x="640" y="442" fill="#B9D6C5" font-family="monospace" font-size="20">task reminder worker</text>
-  <text x="640" y="478" fill="#B9D6C5" font-family="monospace" font-size="20">locale switch: ru / en / fi</text>
+  <text x="640" y="478" fill="#B9D6C5" font-family="monospace" font-size="20">locale switch: 4 locales</text>
 
   <rect x="1076" y="260" width="388" height="256" rx="28" fill="#102019" stroke="#2D5945"/>
   <text x="1110" y="316" fill="#7DFFB1" font-family="monospace" font-size="24">POSTGRESQL</text>

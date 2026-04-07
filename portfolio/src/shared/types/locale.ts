@@ -1,4 +1,4 @@
-export type LocaleCode = 'ru' | 'en' | 'fi'
+export type LocaleCode = 'ru' | 'en' | 'fi' | 'uk'
 
 export type LocaleStatus = 'active' | 'planned'
 

@@ -7,6 +7,8 @@ export const ru: UiDictionary = {
   actions: {
     viewCase: 'Открыть кейс',
     close: 'Закрыть',
+    repository: 'Репозиторий',
+    liveDemo: 'Демо',
   },
   navigation: {
     hero: 'Главная',
@@ -23,7 +25,7 @@ export const ru: UiDictionary = {
   hero: {
     eyebrow: 'Backend Python Engineer',
     availableNowTitle: 'Рабочие языки',
-    availableNowText: 'Портфолио доступно на русском, английском и финском языках.',
+    availableNowText: 'Портфолио доступно на русском, английском, финском и украинском языках.',
     selectedWorkTitle: 'Реальные проекты',
     selectedWorkText:
       'среди них production- и учебные кейсы: Telegram-боты, realtime voice pipeline, Raspberry Pi audio client, desktop-инструменты для тестирования моделей, развивающаяся productivity-система и сама платформа этого портфолио.',
